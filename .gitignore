@@ -1,0 +1,6 @@
+*.iso
+VM/*
+.DS_STORE
+.vscode
+.Rproj.user
+bibliografia/

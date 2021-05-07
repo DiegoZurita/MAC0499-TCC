@@ -1,0 +1,106 @@
+---
+title: "Cronograma"
+site: distill::distill_website
+---
+
+```{css, echo=FALSE}
+td, th {
+    border: 1px solid #efefef
+}
+/*
+  #00bb06 -> feito
+  #0020bb; -> agendado
+  #f0f95e; -> fazendo
+*/
+.cronograma { overflow-x: scroll; }
+.cronograma tbody tr:nth-child(1) td:nth-child(2) { background: #00bb06; } 
+    
+/* Coleta de dados */
+.cronograma tbody tr:nth-child(2) td:nth-child(3),
+.cronograma tbody tr:nth-child(2) td:nth-child(4){ 
+  background: #f0f95e; 
+} 
+  
+/* Criação de modelos */
+.cronograma tbody tr:nth-child(3) td:nth-child(4),
+.cronograma tbody tr:nth-child(3) td:nth-child(5),
+  .cronograma tbody tr:nth-child(3) td:nth-child(6){ 
+  background: #0020bb; 
+} 
+  
+/* Avaliação dos modelos */
+.cronograma tbody tr:nth-child(4) td:nth-child(6) { 
+  background: #0020bb; 
+} 
+
+/* Configurar cluster */
+.cronograma tbody tr:nth-child(5) td:nth-child(7) { 
+  background: #0020bb; 
+} 
+  
+/* Implementar modelo no spark */
+.cronograma tbody tr:nth-child(6) td:nth-child(7),
+  .cronograma tbody tr:nth-child(6) td:nth-child(8){ 
+  background: #0020bb; 
+} 
+  
+/* Integrar modelos em produção */
+.cronograma tbody tr:nth-child(7) td:nth-child(9){ 
+  background: #0020bb; 
+} 
+  
+/* Resultados finais */  
+.cronograma tbody tr:nth-child(8) td:nth-child(9){ 
+  background: #0020bb; 
+}
+  
+/* Monografia */  
+.cronograma tbody tr:nth-child(9) td:nth-child(10),
+.cronograma tbody tr:nth-child(9) td:nth-child(11) { 
+  background: #0020bb; 
+}
+```
+
+
+<div class="cronograma">
+
+|                                                       |Mar|Abr|Mai|Jun|Jul|Ago|Set|Out|Nov|Dez|
+|---|---|---|---|---|---|---|---|---|---|---|
+|Elaborar proposta                                      |   |   |   |   |   |   |   |   |   |   |
+|Coleta de dados                                        |   |   |   |   |   |   |   |   |   |   |
+|Criação de modelos                                     |   |   |   |   |   |   |   |   |   |   |
+|Avaliação dos prós e contras de cada modelo            |   |   |   |   |   |   |   |   |   |   |
+|Configurar cluster spark                               |   |   |   |   |   |   |   |   |   |   |
+|Implementar modelos no spark                           |   |   |   |   |   |   |   |   |   |   |
+|Integrar/testar os modelos no ambiente de "produção"   |   |   |   |   |   |   |   |   |   |   |
+|Obter resultados finais                                |   |   |   |   |   |   |   |   |   |   |
+|Escrita da monografia                                  |   |   |   |   |   |   |   |   |   |   |
+
+</div>
+
+
+```{css, echo=FALSE}
+.legenda {
+  max-width: 208px;
+}
+
+.legenda tbody tr:nth-child(1) td:nth-child(1) {
+  background: #00bb06;
+}
+
+.legenda tbody tr:nth-child(2) td:nth-child(1) {
+  background: #f0f95e;
+}
+
+.legenda tbody tr:nth-child(3) td:nth-child(1) {
+  background: #0020bb;
+}
+```
+
+<div class="legenda">
+|   |Legenda|
+|---|---|
+|   | Concluído       |
+|   | Em andamento    |
+|   | Data planejada  |
+</div>

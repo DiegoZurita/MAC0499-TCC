@@ -1,0 +1,15 @@
+name: "site"
+title: "MAC0499"
+description: |
+  MAC0499 - Trabalho de Formatura Supervisionado
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Proposta"
+      href: index.html
+    - text: "Cronograma"
+      href: cronograma.html
+    - text: "Repositório"
+      href: https://github.com/diegozurita
+include: ["proposta.pdf"]
+output: distill::distill_article
