@@ -10,6 +10,6 @@ navbar:
     - text: "Cronograma"
       href: cronograma.html
     - text: "Repositório"
-      href: https://github.com/diegozurita
+      href: https://github.com/DiegoZurita/MAC0499-TCC
 include: ["proposta.pdf"]
 output: distill::distill_article
