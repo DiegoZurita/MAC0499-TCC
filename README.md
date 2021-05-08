@@ -16,3 +16,14 @@ Descrição do projeto: https://www.linux.ime.usp.br/~diegozurita/mac0499/
     └── README.md
 
     * Pasta descontinuada, vou criar os notebooks usando Google Colab e linkando eles aqui. Está ai apenas para efeitos de histórico.
+
+
+## Notebooks 
+
+Por hora, o acesso está restrio, mas ao final do projeto eu pretendo liberar.
+
+### Análise preliminar do logs v2
+
+https://colab.research.google.com/drive/1vZuXMwDzy8OG-4BGAY61AWEPSVEFDXbu?usp=sharing
+
+Uma análise breve dos logs que estão em v2 para ver se foram gerados de acordo com a expecatitiva, como também para ver se serão úteis para a criação dos modelos.
