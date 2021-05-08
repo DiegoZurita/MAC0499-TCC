@@ -22,7 +22,7 @@ Descrição do projeto: https://www.linux.ime.usp.br/~diegozurita/mac0499/
 
 Por hora, o acesso está restrio, mas ao final do projeto eu pretendo liberar.
 
-### Análise preliminar do logs v2
+### - Análise preliminar do logs v2
 
 https://colab.research.google.com/drive/1vZuXMwDzy8OG-4BGAY61AWEPSVEFDXbu?usp=sharing
 
