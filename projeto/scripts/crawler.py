@@ -42,6 +42,8 @@ def execRequest(requestData: RequestData) -> bool:
         cookies = cookies
     )
     
+    sleep(0.05)
+
     return req.status_code == 200
 
 
@@ -52,7 +54,7 @@ def genRandomString():
 
 def createRequests(host: str, urls: List[str], n: int, sessid: str) -> List[RequestData]:
     url_index = np.random.binomial(len(urls), 0.5, n)
-    shouldAddExtraPrams = np.random.choice([True, False], n)
+    qtdExtraPrams = np.random.choice([0, 1, 2, 3], n)
     ua = UserAgent()
 
     requests = []
@@ -60,10 +62,15 @@ def createRequests(host: str, urls: List[str], n: int, sessid: str) -> List[Requ
     for i in range(n):
         url = urls[url_index[i]]
 
-        if shouldAddExtraPrams[i]:
+        if qtdExtraPrams[i] == 1:
             random_string = genRandomString()
 
             url = "{}?extraParam={}".format(url, random_string)
+        elif qtdExtraPrams[i] == 2:
+            random_string = genRandomString()
+            random_string2 = genRandomString()
+
+            url = "{}?extraParam={}&extraParam2={}".format(url, random_string, random_string2)
 
         
         requests.append(RequestData(host, url, sessid, ua.random))
