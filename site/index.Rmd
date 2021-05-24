@@ -1,5 +1,6 @@
 ---
 title: "Classificação de requisições HTTP maliciosas por meio de aprendizagem de máquina"
+description: TCC do bacharelado em ciência da computação do IME-USP
 site: distill::distill_website
 ---
 
