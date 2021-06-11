@@ -27,3 +27,9 @@ Por hora, o acesso está restrio, mas ao final do projeto eu pretendo liberar.
 https://colab.research.google.com/drive/1vZuXMwDzy8OG-4BGAY61AWEPSVEFDXbu?usp=sharing
 
 Uma análise breve dos logs que estão em v2 para ver se foram gerados de acordo com a expectativa, como também para ver se serão úteis para a criação dos modelos.
+
+### - Modelos 
+
+https://colab.research.google.com/drive/1LRwe-BydM45DsMw29IZBXmVbAboCRal6?usp=sharing
+
+O primeiro modelo foi criado. É uma ávore de decisão que, apesar de simples, consegue classificar todas as requisições ao DVWA como maliciosas e não maliciosas corretamente.
