@@ -1,3 +1,7 @@
-xsser -u "http://192.168.0.119/vulnerabilities/xss_r/" -g "?name=XSS" --cookie="PHPSESSID=rnlvcf07d0vi1ohon6bv6072ea; security=low" --auto -v
+xsser -u "http://192.168.0.119/vulnerabilities/xss_r/" -g "?name=XSS" --cookie="PHPSESSID=dv0ptekinq4qjlcg0sfu8ifjqo; security=low" --auto -v
 
-sqlmap -u "http://192.168.0.119/vulnerabilities/sqli_blind/?id=1&Submit=Submit" --cookie="PHPSESSID=rnlvcf07d0vi1ohon6bv6072ea; security=low" --random-agent -D dvwa -T users --dump
+sqlmap -u "http://192.168.0.119/vulnerabilities/sqli_blind/?id=1&Submit=Submit" --cookie="PHPSESSID=dv0ptekinq4qjlcg0sfu8ifjqo; security=low" --random-agent -D dvwa -T users --dump
+
+python predict_with_model.py /home/diego/Desktop/repos/tcc/projeto/models/tree_pipeline_v1.joblib /home/diego/Desktop/repos/tcc/projeto/dados/raw/v3/access_contaminado.log 1
+
+python crawler.py http://192.168.0.119 10 dv0ptekinq4qjlcg0sfu8ifjqo 
