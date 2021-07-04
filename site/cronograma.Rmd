@@ -20,21 +20,22 @@ td, th {
   background: #00bb06;
 }
 .cronograma tbody tr:nth-child(2) td:nth-child(4){ 
-  background: #f0f95e; 
+  background: #00bb06; 
 } 
   
 /* Criação de modelos */
-.cronograma tbody tr:nth-child(3) td:nth-child(4) {
-  background: #f0f95e; 
+.cronograma tbody tr:nth-child(3) td:nth-child(4),
+.cronograma tbody tr:nth-child(3) td:nth-child(5){
+  background: #00bb06; 
 }
-.cronograma tbody tr:nth-child(3) td:nth-child(5),
-  .cronograma tbody tr:nth-child(3) td:nth-child(6){ 
-  background: #0020bb; 
+
+.cronograma tbody tr:nth-child(3) td:nth-child(6){ 
+  background: #f0f95e; 
 } 
   
 /* Avaliação dos modelos */
 .cronograma tbody tr:nth-child(4) td:nth-child(6) { 
-  background: #0020bb; 
+  background: #f0f95e; 
 } 
 
 /* Configurar cluster */
@@ -73,7 +74,7 @@ td, th {
 |Elaborar proposta                                      |   |   |   |   |   |   |   |   |   |   |
 |Coleta de dados                                        |   |   |   |   |   |   |   |   |   |   |
 |Criação de modelos                                     |   |   |   |   |   |   |   |   |   |   |
-|Avaliação dos prós e contras de cada modelo            |   |   |   |   |   |   |   |   |   |   |
+|Avaliação dos modelos                                  |   |   |   |   |   |   |   |   |   |   |
 |Configurar cluster spark                               |   |   |   |   |   |   |   |   |   |   |
 |Implementar modelos no spark                           |   |   |   |   |   |   |   |   |   |   |
 |Integrar/testar os modelos no ambiente de "produção"   |   |   |   |   |   |   |   |   |   |   |
