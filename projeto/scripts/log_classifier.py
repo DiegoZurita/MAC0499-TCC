@@ -8,7 +8,7 @@ def main():
     logFilePath = sys.argv[1]
     destPathFile = sys.argv[2]
     totalLines = int(sys.argv[3])
-    startFromLine = int(sys.argv[4])
+    startFromLine = int(sys.argv[4]) + 1
 
     if not os.path.isfile(destPathFile):
         print("file not exists, creating..")
