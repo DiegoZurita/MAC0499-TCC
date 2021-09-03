@@ -4,7 +4,6 @@ import sys
 
 
 def main():
-    print(sys.argv)
     logFilePath = sys.argv[1]
     destPathFile = sys.argv[2]
     totalLines = int(sys.argv[3])
@@ -16,9 +15,11 @@ def main():
         f.close()
         
 
-    destfile = open(destPathFile, "r+")
+    destfile = open(destPathFile, "a+")
 
+    print("")
     print("Classifique as linhas abaixo (m = maliciosa, n = não maliciosa), q para sair")
+    print("")
 
     for i in range(startFromLine, totalLines):
         logLine = linecache.getline(logFilePath, i)
