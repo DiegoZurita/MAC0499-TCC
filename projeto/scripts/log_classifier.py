@@ -24,7 +24,7 @@ def main():
     for i in range(startFromLine, totalLines):
         logLine = linecache.getline(logFilePath, i)
         
-        classe = input("%s" % (logLine))
+        classe = input("%d %s" % (i, logLine))
 
         if classe == "q":
             break
