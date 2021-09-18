@@ -772,7 +772,7 @@ rowIndex, row, class
 772, 203.121.182.142 - - [10/Mar/2004:00:21:45 -0500] "CONNECT 210.242.13.46:25 HTTP/1.0" 200 - "-" "-", n
 773, 24.235.131.196 - - [10/Mar/2004:00:21:49 -0500] "GET http://www.exoticwife.com/iframe.php HTTP/1.0" 302 0 "http://www.exoticwife.com/iframe.php" "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)", n
 774, 62.233.169.194 - - [10/Mar/2004:00:21:50 -0500] "CONNECT service.niksoftware.ru:80 HTTP/1.1" 400 381 "-" "-", n
-775, 62.233.169.194 - - [10/Mar/2004:00:21:51 -0500] "GET http://service.niksoftware.ru:80/proxycheck.pl?proxyhost=www.testproxy.net&proxyport=80&proxyprotocol=HTTP HTTP/1.1" 200 5 "-" "Mozilla/3.0 (compatible; mSoft Proxy Checker; unknown; proxy: www.testproxy.net:80, protocol: HTTP)", n
+775, 62.233.169.194 - - [10/Mar/2004:00:21:51 -0500] "GET http://service.niksoftware.ru:80/proxycheck.pl?proxyhost=www.testproxy.net&proxyport=80&proxyprotocol=HTTP HTTP/1.1" 200 5 "-" "Mozilla/3.0 (compatible; mSoft Proxy Checker; unknown; proxy: www.testproxy.net:80 protocol: HTTP)", n
 776, 212.160.136.163 - - [10/Mar/2004:00:21:52 -0500] "CONNECT service.niksoftware.ru:80 HTTP/1.1" 400 381 "-" "-", n
 777, 212.160.136.163 - - [10/Mar/2004:00:21:52 -0500] "GET http://service.niksoftware.ru:80/proxycheck.pl?proxyhost=www.testproxy.net&proxyport=8080&proxyprotocol=HTTP HTTP/1.1" 200 337 "-" "Mozilla/3.0 (compatible; mSoft Proxy Checker; unknown; proxy: www.testproxy.net:8080, protocol: HTTP)", nn
 778, 24.235.131.196 - - [10/Mar/2004:00:22:03 -0500] "GET http://www.exclamation-american-wet-shaved-teen-pussy-photos.com/iframe.php HTTP/1.0" 500 496 "http://www.exclamation-american-wet-shaved-teen-pussy-photos.com/iframe.php" "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)", n
