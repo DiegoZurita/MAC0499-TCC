@@ -34,6 +34,12 @@ https://colab.research.google.com/drive/1LRwe-BydM45DsMw29IZBXmVbAboCRal6?usp=sh
 
 O primeiro modelo foi criado. É uma ávore de decisão que, apesar de simples, consegue classificar todas as requisições ao DVWA como maliciosas e não maliciosas corretamente.
 
+### - Modelos em dados reais
+
+https://colab.research.google.com/drive/1cI0c9B1xuy78Y9yc7l5ExN7zXZGg-akE?usp=sharing
+
+Neste notebook nos testamos os modelos encontrados no notebook anterior em logs reais.
+
 ### - Rodando o log classifier com o arquivo default
 ```
 make logFile=/home/diego/Desktop/repos/tcc/projeto/dados/raw/jaron-honeynet-scan34/logs/access_log destFile=/home/diego/Desktop/repos/tcc/projeto/dados/processado/v4/access_log_classified.csv
