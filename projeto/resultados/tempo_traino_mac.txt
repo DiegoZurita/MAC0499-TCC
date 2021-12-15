@@ -1,0 +1,120 @@
+Runnig train 1...
+accuracy: 0.9221419185282523
+
+real	0m18.827s
+user	0m0.411s
+sys	0m0.057s
+Runnig train 2...
+accuracy: 0.918467583497053
+
+real	0m18.392s
+user	0m0.433s
+sys	0m0.063s
+Runnig train 3...
+accuracy: 0.9221827575072651
+
+real	0m18.517s
+user	0m0.428s
+sys	0m0.064s
+Runnig train 4...
+accuracy: 0.9142572283150548
+
+real	0m18.403s
+user	0m0.428s
+sys	0m0.066s
+Runnig train 5...
+accuracy: 0.9215946843853821
+
+real	0m18.301s
+user	0m0.434s
+sys	0m0.064s
+Runnig train 6...
+accuracy: 0.9181663837011884
+
+real	0m18.349s
+user	0m0.438s
+sys	0m0.064s
+Runnig train 7...
+accuracy: 0.9169837426496023
+
+real	0m18.495s
+user	0m0.432s
+sys	0m0.062s
+Runnig train 8...
+accuracy: 0.916256157635468
+
+real	0m18.747s
+user	0m0.434s
+sys	0m0.065s
+Runnig train 9...
+accuracy: 0.9247422680412372
+
+real	0m18.510s
+user	0m0.435s
+sys	0m0.064s
+Runnig train 10...
+accuracy: 0.9212779973649539
+
+real	0m18.443s
+user	0m0.439s
+sys	0m0.065s
+Runnig train 11...
+accuracy: 0.9240294511378849
+
+real	0m18.564s
+user	0m0.429s
+sys	0m0.063s
+Runnig train 12...
+accuracy: 0.9176788124156545
+
+real	0m18.516s
+user	0m0.430s
+sys	0m0.064s
+Runnig train 13...
+accuracy: 0.9205432937181663
+
+real	0m18.497s
+user	0m0.436s
+sys	0m0.066s
+Runnig train 14...
+accuracy: 0.9221215172876804
+
+real	0m18.401s
+user	0m0.430s
+sys	0m0.064s
+Runnig train 15...
+accuracy: 0.9217970049916805
+
+real	0m18.639s
+user	0m0.433s
+sys	0m0.064s
+Runnig train 16...
+accuracy: 0.9114565731666103
+
+real	0m18.466s
+user	0m0.438s
+sys	0m0.065s
+Runnig train 17...
+accuracy: 0.9140225179119754
+
+real	0m18.471s
+user	0m0.436s
+sys	0m0.063s
+Runnig train 18...
+accuracy: 0.9200264375413086
+
+real	0m18.446s
+user	0m0.441s
+sys	0m0.069s
+Runnig train 19...
+accuracy: 0.9234991423670669
+
+real	0m18.409s
+user	0m0.432s
+sys	0m0.063s
+Runnig train 20...
+accuracy: 0.9188730482009504
+
+real	0m18.531s
+user	0m0.433s
+sys	0m0.063s

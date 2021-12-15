@@ -9,7 +9,7 @@ yColumns = ["statuscode", "navegadorCat", "qtd_query_params", "bytessent"]
 xColumn = "malicious"
 
 df = spark.read.csv(
-    "/home/diego/Desktop/repos/tcc/projeto/dados/processado/v4/dados_reais.csv", 
+    "/Users/diegozurita/Desktop/repos/facul/MAC0499-TCC/projeto/dados/processado/v4/dados_reais.csv", 
     header=True,
     inferSchema=True
 )

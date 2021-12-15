@@ -1,0 +1,25 @@
+- Introdução
+
+- Coleta de dados fake / reais
+
+- Modelos de arvore
+    - random forest
+    - decision tree
+
+- Logs
+    - o que são 
+    - gerando features
+    
+- Usando os modelos de arvores
+    - quais features foram usadas
+    - acurácia encontrada 
+
+- Rodando em computadores e no rasberry, comparação
+    - resultados no computador
+    - resultados no raspberry
+
+- Conclusão
+
+- Próximos passos
+
+https://web.archive.org/web/20191201093132/http:/old.honeynet.org/scans/scan34/
