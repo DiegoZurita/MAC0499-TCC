@@ -6,4 +6,46 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Aqui vem minha introdução
+Com a variedade de serviços oferecidos pela internet, a quantidade de requisições
+que são feitas a um servidor web aumenta. De acordo com \cite{facebook:topProblems}, o Facebook em 2014 recebia
+uma quatidade de consultas da ordem de bilhões por segundo. Nesse sentido é esperado que
+também aumente o número de requisições maliciosas, como por exemplo SQL injection que está 
+no top 10 da OWASP \cite{owasp:top10}, uma organização sem fins lucrativos que visa melhorar a segurança em 
+softwares, através da publicação de artigos, metodologias e documentação de maneira gratuita.
+
+Em tal cenário se faz necessário um sistema automático de detecção de requisições maliciosas, pois analisar cada
+uma delas manualmente pode ser inviável ou bastante custoso. Uma possível solução é criar modelos de aprendizagem
+de máquina para encontrar padrões de requisições maliciosas e então tomar decisões automatizadas com base no
+resultado desses modelos.
+
+Além disso, é desejável que esse projeto tenha um custo baixo em termos financeiros, de rede e
+de consumo de energia. Para isso, se tem proposto o uso de hardware de baixo custo para implantação 
+desse tipo de sistema. Em \cite{sbrc_estendido:lucas} há uma análise que conclui que é possível usar Raspberry Pi como nó de
+um cluster de processamento de dados.
+
+\subsection{Objetivo}
+
+O objetivo deste conclusão de curso é construir modelos de aprendizagem de máquina para classificar
+requisições maliciosas. Tais modelos utilizam logs de servidores HTTP para detectar potenciais ataques
+de SQL Injection e XSS. E por fim, rodar esses modelos em Raspberry Pi.
+
+Portanto, avançar o que foi realizado no TCC “Análise de Desempenho de Computadores de Baixo Custo em um Sistema de 
+Detecção de Intrusão” de Lucas Seiki Oshiro \cite{tcc:lucas}.
+
+\subsection{Resultado alcançados}
+
+Aqui vem os resultados alcançados
+
+\subsection{Organização da monografia}
+
+Os próximos capítulos desta monografia estão dividos da seguinte maneira: 
+
+\begin{itemize}
+    \item Capítulo 2: Trabalhos relacionados a este TCC e resultados encontrados.
+    \item Capítulo 3: Conceitos e ferramentas que foram usados.
+    \item Capítulo 4: Ambiente usado e como os dados foram coletados.
+    \item Capítulo 5: Como o modelo final foi selecionado.
+    \item Capítulo 6: Metodologia e os resultados dos experimentos.
+    \item Capítulo 7: Conclusão.
+    \item Capítulo 8: Avaliação pessoal e crítica.
+\end{itemize}

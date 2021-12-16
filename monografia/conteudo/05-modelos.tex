@@ -65,7 +65,7 @@ De posse dessas colunas que vieram dos logs, mais 3 colunas foram criadas:
 \end{itemize}
 
 
-\subsection{Separação dos modelos em dados de treino e teste}
+\subsection{Preparação dos dados}
 
 Durante o treino/validação de todos os modelos deste capitulo, o conjunto de dados original foi divido 
 em treino e teste, como explicado abaixo:
@@ -76,8 +76,10 @@ em treino e teste, como explicado abaixo:
 \end{itemize}
 
 Outro ponto de atenção necessário é manter o desbalancemento da variável resposta (coluna malicious) nos 
-conjuntos acima, dado que há mais requisições maliciosas do que não maliciosas. Isso foi feito 
-com o auxilio dos utilitários de pré-processamento de dados do scikit-learn e do Apache Spark.
+conjuntos acima, dado que há mais requisições maliciosas do que não maliciosas. 
+
+Por fim, dados categóricos foram transformados em números usando a técnica de OneHotEncode. Este e o item
+anterior foram feitos com o auxilio dos utilitários de pré-processamento de dados do scikit-learn e do Apache Spark.
 
 \subsection{Modelo base}
 
@@ -95,13 +97,72 @@ queriamos saber se modelos de árvores resolveriam nosso problema.
 \end{itemize}
 
 
-Com ele e os colunas mencionadas conseguimos uma acurácia de 1 nos dados de teste. Surprendente pois 
-não esperavamos esse resultado na primeira tentativa, da que se trata de um modelo base, logo suspeitamos 
+Com este modelo e as colunas mencionadas conseguimos uma acurácia de 1 nos dados de teste. Surprendente, pois 
+não esperavamos esse resultado na primeira tentativa, dado que se trata de um modelo base, logo suspeitamos 
 que o modelo estava sobre ajustado nos dados. 
 
 Para ter uma intuição melhor de como o modelo estava realizando a classificação, optamos por experimentar 
 o modelo de árvore de decisão, dado que depurar-lo é possível.
 
-\subsection{Depurando o modelo }
+\subsection{Depurando o modelo - árvore de decisão}
 
-As mesmas colunas da seção anterior foram usadas para treinar um modelo de árvore de decisão.
+As mesmas colunas da seção anterior foram usadas para treinar uma árvore de decisão, e novamente
+o modelo teve uma acurácia de 1 nos dados de treino e teste. 
+
+Para entender como a classificação está sendo realizada, exibimos árvore final na imagem \ref{fig:primeira_arvore}. Nesse sentido, 
+como os dados parassaram por um pré-processamento de OneHotEncoder vale mencionar o que significam cada índica em X:
+
+\begin{itemize}
+    \item X[0] e X[1]: é a coluna statuscode.
+    \item X[3] até X[9]: indicam o navegador que foi utilizado.
+    \item X[10]: é a coluna qtd\_query\_params
+    \item X[11]: é a coluna bytessent
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\textwidth]{figuras/primeira-arvore.png}
+    \caption{Primeira árvore de decisão. \label{fig:primeira_arvore}}    
+\end{figure}
+
+Vemos que a árvore esta usando majoritariamente os dados da coluna navegador 
+para realizar a classifição, o que não faz sentido, dado que esse dado foi simulado e o 
+navegador não tem nenhuma relação com os ataques. Então removemos essa coluna da entrada 
+e o resultado está na imagem \ref{fig:segunda_arvore}.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\textwidth]{figuras/segunda_arvore.png}
+    \caption{Segunda árvore de decisão. \label{fig:segunda_arvore}}    
+\end{figure}
+
+Esta versão já nos pareceu mais sólida pois ela utiliza a quantidade de paramêtros na query 
+e a quantidade bytes enviados para o cliente, o que está relacionado com os ataques. Além disso,
+também atingiu uma acurácia de 1.
+
+\subsection{Escolha do modelo e considerações}
+
+Dado o que foi apresentado nas seções anteiories, escolhemos o modelo de árvore de decisão com as colunas
+abaixo para realizar os experimentos e valida-lo em dados reais. 
+
+\begin{itemize}
+    \item statuscode
+    \item qtd\_query\_params
+    \item bytessent
+\end{itemize}
+
+Outros modelos mais complexos, como redes neurais ou xgboost, não foram considerados pois o 
+objetivo deste trabalho é usar-lo em computadores onde os recursos, como memória e disco, são
+limitados portanto favorecendo modelos mais simples como o escolhido.
+
+Também vale notar que características dos logs específicas a ataques XSS e SQL Injection, como 
+verificar a existência de uma consulta SQL na url, não foram criadas pois as colunas padrões 
+do log foram suficientes para conseguir uma acurácia considerada boa.
+
+\subsection{Testes em dados reais}
+
+De posse dos dados reais mencionados na seção 4.2.2, executamos o modelo escolhido neles e atingimos 
+uma acurácia de aproximadamente 0.93 nos dados de teste, o que consideramos próximos dos resultados 
+obtidos nos artigos do capítulo 2, porém com um modelo mais simples. Portanto, definitivamente definitivamente
+seguimos com ele nos experimentos.

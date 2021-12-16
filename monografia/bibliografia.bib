@@ -1,280 +1,126 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%% INSERINDO COMENTÁRIOS EM ARQUIVOS .bib %%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% 1. Como em outros arquivos LaTeX, comentários são iniciados por "%" e,
-%    portanto, é preciso usar "\%" para imprimir o caractere "%". Esquecer
-%    disso pode gerar erros difíceis de encontrar!
-%
-% 2. Não é possível inserir comentários dentro de uma entrada, apenas fora.
-%
-% 3. Não é possível incluir o caractere arroba em um comentário.
-%
-% 4. Se quiser desabilitar temporariamente um campo ("comentar" o campo),
-%    troque seu nome para algum nome inválido, como "author-disable".
-%    Se quiser fazer alguma observação permanente dentro de uma entrada,
-%    você também pode usar algum nome de campo inválido, como "lembrete",
-%    ou usar o campo "annotation", que normalmente é ignorado.
-%
-% 5. Se quiser desabilitar temporariamente uma entrada inteira ("comentar" a
-%    entrada), não basta colocar "%" nas linhas correspondentes por causa do
-%    caractere arroba; também é preciso remover a arroba.
-%
-% 6. Na verdade, as regras não são bem essas, mas segui-las é uma boa ideia:
-%    https://tex.stackexchange.com/a/262282
-
-
-% Esta entrada está comentada, ou seja, não tem efeito: se houvesse uma
-% referência a ela no texto, a referência ficaria inválida. Observe que,
-% para isso, o caractere arroba foi apagado!
-%Book{JW82,
-% author    = {Richard A. Johnson and Dean W. Wichern},
-% title     = {Applied Multivariate Statistical Analysis},
-% publisher = {Prentice-Hall},
-% year      = {1983}
-%}
-
-% Esta entrada não está em uso em tese.tex, apenas em
-% apresentacao.tex, mas isso não é um problema: você pode
-% ter um banco de dados com todos os papers que são de seu
-% interesse e, em um dado texto, citar apenas alguns deles.
-@Manual{CORBA:spec,
- title       = {{CORBA} v3.0 Specification},
- author      = {{Object Management Group}},
- shortauthor = {OMG},
- month       = Jul,
- year        = {2002},
- note        = {OMG Document 02-06-33}
+@online{facebook:topProblems,
+ author   = {Janet Wiener and Nathan Bronson},
+ title    = {Facebook's Top Open Data Problems},
+ year     = {2014},
+ month    = Oct,
+ urldate  = {2021-03-07},
+ url      = {https://research.fb.com/blog/2014/10/facebook-s-top-open-data-problems/},
 }
 
-@Book{eco:09,
- author   = {Umberto Eco},
- title    = {Como se Faz uma Tese},
- edition  = 22,
- publisher= {Perspectiva},
- note     = {Tradução Gilson Cesar Cardoso de Souza},
- year     = {2009},
+@online{owasp:top10,
+ author   = {Andrew van der Stock, Brian Glas, Neil Smithline and Torsten Gigler.},
+ title    = {OWASP Top 10},
+ year     = {2017},
+ month    = Oct,
+ urldate  = {2021-03-07},
+ url      = {https://owasp.org/www-project-top-ten/2017/Top_10.html},
 }
 
-@Book{zobel:04,
- author   = {Justin Zobel},
- title    = {Writing for Computer Science: The Art of Effective Communication},
- publisher= {Springer},
- edition  = 2,
- year     = {2004},
+@inproceedings{sbrc_estendido:lucas,
+ author = {Lucas  Oshiro and Daniel  Batista},
+ title = {Análise Preliminar da Detecção de Ataques Ofuscados e do Uso de Hardware de Baixo Custo em um Sistema para Detecção de Ameaças},
+ booktitle = {Anais Estendidos do XXXVII Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos},
+ location = {Gramado},
+ year = {2019},
+ keywords = {},
+ issn = {2177-9384},
+ pages = {233--240},
+ publisher = {SBC},
+ address = {Porto Alegre, RS, Brasil},
+ doi = {10.5753/sbrc_estendido.2019.7792},
+ url = {https://sol.sbc.org.br/index.php/sbrc_estendido/article/view/7792}
 }
 
-@Book{waz:09,
- author   = {Raul S. Wazlawick},
- title    = {Metodologia de Pesquisa em Ciência da Computação},
- publisher= {Campus},
- edition  = 1,
- year     = {2009},
+@online{tcc:lucas,
+ author   = {Lucas Seiki Oshiro},
+ title    = {Análise de Desempenho de Computadores de Baixo Custo em um Sistema de Detecção de Intrusão},
+ year     = {2019},
+ month    = Dec,
+ urldate  = {2021-03-07},
+ url      = {https://owasp.org/www-project-top-ten/2017/Top_10.html},
 }
 
-@Book{Higham:98,
- author   = {Nicholas J. Higham},
- title    = {Handbook of Writing for the Mathematical Sciences},
- edition  = 2,
- publisher= {SIAM: Society for Industrial and Applied Mathematics},
- month    = Aug,
- year     = {1998},
+@inproceedings{10.1145/3190645.3190670,
+author = {Ross, Kevin and Moh, Melody and Moh, Teng-Sheng and Yao, Jason},
+title = {Multi-Source Data Analysis and Evaluation of Machine Learning Techniques for SQL Injection Detection},
+year = {2018},
+isbn = {9781450356961},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3190645.3190670},
+doi = {10.1145/3190645.3190670},
+abstract = {SQL Injection continues to be one of the most damaging security exploits in terms of personal information exposure as well as monetary loss. Injection attacks are the number one vulnerability in the most recent OWASP Top 10 report, and the number of these attacks continues to increase. Traditional defense strategies often involve static, signature-based IDS (Intrusion Detection System) rules which are mostly effective only against previously observed attacks but not unknown, or zero-day, attacks. Much current research involves the use of machine learning techniques, which are able to detect unknown attacks, but depending on the algorithm can be costly in terms of performance. In addition, most current intrusion detection strategies involve collection of traffic coming into the web application either from a network device or from the web application host, while other strategies collect data from the database server logs. In this project, we are collecting traffic from two points: at the web application host, and at a Datiphy appliance node located between the webapp host and the associated MySQL database server. In our analysis of these two datasets, and another dataset that is correlated between the two, we have been able to demonstrate that accuracy obtained with the correlated dataset using algorithms such as rule-based and decision tree are nearly the same as those with a neural network algorithm, but with greatly improved performance.},
+booktitle = {Proceedings of the ACMSE 2018 Conference},
+articleno = {1},
+numpages = {8},
+keywords = {machine learning, network intrusion detection, SQL injection},
+location = {Richmond, Kentucky},
+series = {ACMSE '18}
 }
 
-@book{Knuth:96,
- author   = {Donald E. Knuth and Tracy Larrabee and Paul M. Roberts},
- title    = {Mathematical Writing},
- publisher= {The Mathematical Association of America},
- month    = Sep,
- year     = {1996}
+@INPROCEEDINGS{6993127,  
+author={Joshi, Anamika and Geetha, V},  
+booktitle={2014 International Conference on Control, Instrumentation, Communication and Computational Technologies (ICCICCT)},   
+title={SQL Injection detection using machine learning},   
+year={2014},  
+volume={},  
+number={},  
+pages={1111-1115},  
+doi={10.1109/ICCICCT.2014.6993127}
 }
 
-@InProceedings{alves03:simi,
- author   = {Carlos E. R. Alves and Edson N. Cáceres and Frank Dehne and Siang W. Song},
- title    = {A Parallel Wavefront Algorithm for Efficient Biological Sequence Comparison},
- booktitle= {ICCSA'03: The 2003 International Conference on Computational Science and its Applications},
- year     = {2003},
- pages    = {249-258},
- month    = May,
- publisher= {Springer-Verlag}
+@article{BASSEYYAR201828,
+title = {Detection of attack-targeted scans from the Apache HTTP Server access logs},
+journal = {Applied Computing and Informatics},
+volume = {14},
+number = {1},
+pages = {28-36},
+year = {2018},
+issn = {2210-8327},
+doi = {https://doi.org/10.1016/j.aci.2017.04.002},
+url = {https://www.sciencedirect.com/science/article/pii/S2210832717300169},
+author = {Merve {Baş Seyyar} and Ferhat Özgür Çatak and Ensar Gül},
+keywords = {Rule-based model, Log analysis, Scan detection, Web application security, XSS detection, SQLI detection},
+abstract = {A web application could be visited for different purposes. It is possible for a web site to be visited by a regular user as a normal (natural) visit, to be viewed by crawlers, bots, spiders, etc. for indexing purposes, lastly to be exploratory scanned by malicious users prior to an attack. An attack targeted web scan can be viewed as a phase of a potential attack and can lead to more attack detection as compared to traditional detection methods. In this work, we propose a method to detect attack-oriented scans and to distinguish them from other types of visits. In this context, we use access log files of Apache (or ISS) web servers and try to determine attack situations through examination of the past data. In addition to web scan detections, we insert a rule set to detect SQL Injection and XSS attacks. Our approach has been applied on sample data sets and results have been analyzed in terms of performance measures to compare our method and other commonly used detection techniques. Furthermore, various tests have been made on log samples from real systems. Lastly, several suggestions about further development have been also discussed.}
 }
 
-@Article{MenaChalco08,
- author   = {Jesús P. Mena-Chalco and Helaine Carrer and Yossi Zana and Roberto M. Cesar-Jr.},
- title    = {Identification of Protein Coding Regions Using the Modified {G}abor-Wavelet Transform},
- journal  = {IEEE/ACM Transactions on Computational Biology and Bioinformatics},
- volume   = {5},
- pages    = {198-207},
- year     = {2008},
+@INPROCEEDINGS{6289291,  
+author={Goseva-Popstojanova, Katerina and Anastasovski, Goce and Pantev, Risto},  
+booktitle={2012 21st International Conference on Computer Communications and Networks (ICCCN)},   
+title={Classification of Malicious Web Sessions},   
+year={2012},  
+volume={},  
+number={},  
+pages={1-9},  
+doi={10.1109/ICCCN.2012.6289291}
 }
 
-@Article{floats2014,
- author    = {Frank Mittelbach},
- title     = {How to influence the position of float environments like figure and table in {\LaTeX}?},
- journal   = {{TUGboat}},
- journalsubtitle = {Communications of the \TeX\ Users Group},
- volume    = {35},
- number    = {3},
- year      = 2014,
- url       = {tug.org/TUGboat/tb35-3/tb111mitt-float.pdf},
- urldate   = {2020-01-09},
- publisher = {\TeX\ {Users} {Group}},
- address   = {Portland ({OR}), {USA}},
+
+@INPROCEEDINGS{8322600,  
+author={Cao, Qimin and Qiao, Yinrong and Lyu, Zhong},  
+booktitle={2017 3rd IEEE International Conference on Computer and Communications (ICCC)},   
+title={Machine learning to detect anomalies in web log analysis},   
+year={2017},  
+volume={},  
+number={},  
+pages={519-523},  
+doi={10.1109/CompComm.2017.8322600}
 }
 
-@Techreport{alvisi99:analysisCIC,
- author      = {Lorenzo Alvisi and Elmootazbellah Elnozahy and Sriram S. Rao and Syed A. Husain and Asanka Del Mel},
- title       = {An Analysis of Comunication-Induced Checkpointing},
- institution = {Department of Computer Science, University of Texas at Austin},
- year        = {1999},
- number      = {TR-99-01},
- address     = {Austin, USA}
-}
-
-@Misc{gridftp,
- author   = {William Allcock},
- title    = {{GridFTP} Protocol Specification. {Global Grid Forum} Recommendation ({GFD}.20)},
- year     = {2003}
-}
-
-% A entrada "year" eh usada por bibtex;
-% biblatex pode usar "year" ou "date"
-@Manual{natbib,
- title       = "Reference sheet for \texttt{natbib} usage",
- author      = "Patrick W. Daly",
- year        = {2010},
- date        = {2010-09-13},
- urldate     = {2018-12-20},
- url         = {mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf},
-}
-
-@Manual{biblatex,
- title       = "The \texttt{biblatex} Package",
- author      = "Philipp Lehman and Philip Kime and Moritz Wemheuer and Audrey Boruvka and Joseph Wright",
- year        = 2018,
- date        = {2018-10-30},
- urldate     = {2018-12-20},
- url         = {mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf},
-}
-
-@PhdThesis{garcia01:PhD,
- author   = {Islene C. Garcia},
- title    = {Visões Progressivas de Computações Distribuídas},
- school   = {Instituto de Computação, Universidade de Campinas},
- address  = {Campinas, Brasil},
- year     = {2001},
- month    = Dec
-}
-
-@Conference{bronevetsky02,
- author     = {Greg Bronevetsky and Daniel Marques and Keshav Pingali and Paul Stodghill},
- title      = {Automated Application-Level Checkpointing of {MPI} Programs},
- booktitle  = {PPoPP'03: Proceedings of the 9th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
- year       = {2003},
- pages      = {84-89},
- eventdate  = {2003-06-11/2003-06-13},
- venue      = {San Diego, California}
-}
-
-@InCollection{bobaoglu93:concepts,
- author   = {Ozalp Babaoglu and Keith Marzullo},
- title    = {Consistent Global States of Distributed Systems: Fundamental Concepts and Mechanisms},
- editor   = {Sape Mullender},
- booktitle= {Distributed Systems},
- edition  = 2,
- year     = {1993},
- pages    = {55-96}
-}
-
-@MastersThesis{schmidt03:MSc,
- author   = {Rodrigo M. Schmidt},
- title    = {Coleta de Lixo para Protocolos de \emph{Checkpointing}},
- school   = {Instituto de Computação, Universidade de Campinas},
- address  = {Campinas, Brasil},
- year     = {2003},
- month    = Oct
-}
-
-@online{fowler04:designDead,
- author   = {Martin Fowler},
- title    = {Is Design Dead?},
- year     = {2004},
- month    = May,
- urldate  = {2010-01-30},
- url      = {martinfowler.com/articles/designDead.html},
-}
-
-@online{FSF:GNU-GPL,
- author      = {{Free Software Foundation}},
- shortauthor = {FSF},
- title       = {{GNU} General Public License},
- year        = 2007,
- urldate     = {2010-01-30},
- url         = {www.gnu.org/copyleft/gpl.html},
-}
-
-@article{alon09:how,
- author   = {Uri Alon},
- title    = {How To Choose a Good Scientific Problem},
- journal  = {Molecular Cell},
- year     = {2009},
- volume   = {35},
- number   = {6},
- pages    = {726--728},
- publisher= {Cell Press},
- month    = sep,
- doi      = {10.1016/j.molcel.2009.09.013},
-}
-
-@book{tufte01:visualDisplay,
- author   = {Edward Tufte},
- title    = {The Visual Display of Quantitative Information},
- year     = {2001},
- edition  = 2,
- publisher= {Graphics Press},
- month    = may,
-}
-
-@Manual{usp:guidelines,
- author      = {{Universidade de São Paulo --- Sistema Integrado de Bibliotecas}},
- shortauthor = {SIBiUSP},
- title       = {Diretrizes para Apresentação de
-	        Dissertações e Teses da {USP}:
-	        Documento Eletrônico e Impresso},
- year        = 2009,
- url         = {www.teses.usp.br/index.php?option=com_content&view=article&id=52&Itemid=67},
- urldate     = {2017-11-10},
-}
-
-@online{carlis:09,
- author  = {John V. Carlis},
- title   = {Design: The Key to Writing
-            (and Advising) a One-Draft {Ph.D} Dissertation},
- year    = 2009,
- url     = {www-users.cs.umn.edu/~carlis/one-draft.pdf},
- urldate = {2017-11-10},
-}
-
-@book{craftresearch,
- author    = {Wayne C. Booth and Gregory G. Colomb and Joseph M. Williams},
- title     = {The Craft of Research},
- publisher = {The University of Chicago Press},
- year      = 2008,
-}
-
-@book{dissertjourney,
- author    = {Carol M. Roberts},
- title     = {The Dissertation Journey},
- publisher = {Corwin},
- year      = 2010,
- edition   = 2,
- location  = {Thousand Oaks, CA},
-}
-
-@manual{sbctemplate,
- author  = {Luciana P. Nedel and Rafael H. Bordini and Flávio Rech Wagner and Jomi F. H\"{u}bner},
- title   = {Instructions for Authors of {SBC} Conferences Papers and Abstracts},
- year    = 2017,
- url     = {www.sbc.org.br/documentos-da-sbc/category/169-templates-para-artigos-e-capitulos-de-livros},
- urldate = {2018-12-13},
+@InProceedings{10.1007/978-3-030-33509-0_18,
+author="Fontaine, Jaron
+and Kappler, Chris
+and Shahid, Adnan
+and Poorter, Eli De",
+editor="Barolli, Leonard
+and Hellinckx, Peter
+and Natwichai, Juggapong",
+title="Log-Based Intrusion Detection for Cloud Web Applications Using Machine Learning",
+booktitle="Advances on P2P, Parallel, Grid, Cloud and Internet Computing",
+year="2020",
+publisher="Springer International Publishing",
+address="Cham",
+pages="197--210",
+abstract="With the ongoing rise and ease-of-use of services provided by major cloud providers, many enterprises migrate their infrastructure and applications to cloud platforms. However, the success of using many and diverse services leads to more attack vectors for potential attackers to exploit, that again leads to more difficult, complex and platform-specific security architectures. This paper is an attempt to remedy this problem by proposing simplified cloud security using machine learning techniques. This leads to a more general architecture that uses classifiers such as decision trees and neural networks, trained with data logged by cloud applications. More specifically, we collected easy-to-interpret access logs from multiple web applications which are often the only kind of security information available on various services on such platforms. The results show a more flexible approach, that was experimentally validated on cloud platforms and improve detection speed, using neural networks and J48 decision trees, up to 26--47 times while still maintaining an accuracy of 98.47{\%} and 97.71{\%} respectively.",
+isbn="978-3-030-33509-0"
 }
