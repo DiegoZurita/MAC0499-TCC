@@ -6,11 +6,11 @@
 \chapter{Modelos}
 \label{cap:models}
 
-Este capitulo tem como objetivo mostrar como os modelos escolhidos e apresentar
-algumas métricas nos dados simulados e reais.
+Este capitulo tem como objetivo mostrar como os modelos foram escolhidos e apresentar
+métricas nos dados simulados e reais.
 
-Os resultados aqui apresentados foram obtidos nos notebooks do Google Colab, uma vez que 
-que este foi o ambiente escolhido para compartilhar os resultados dos nosso experimentos. 
+Os resultados aqui apresentados foram obtidos no ambiente do Google Colab, uma vez que 
+que este foi o ambiente escolhido para compartilhar os resultados dos nossos experimentos. 
 
 Por fim, durante a seleção dos modelos apenas os dados simulados foram usados, uma vez
 que ainda não estavamos de posse dos logs reais, portanto apenas na última seção deste capítulo
@@ -56,7 +56,7 @@ Aqui forneceremos um dicionário do que significa cada coluna:
 
 \end{sidewaystable}
 
-De posse dessas colunas que vieram dos logs, mais 3 colunas foram criadas:
+De posse dessas colunas que estão nos logs, mais 3 colunas foram criadas:
 
 \begin{itemize}
     \item url\_sem\_query: armazena a url requisitada sem o paramêtros de consulta.
@@ -72,10 +72,10 @@ em treino e teste, como explicado abaixo:
 
 \begin{itemize}
     \item treino: dados que serão usados para treinar o modelo.
-    \item teste: dados não presentes no trieno com o objetivo de verificar se o modelo generaliza bem ou não.
+    \item teste: dados não presentes no treino, com o objetivo de verificar se o modelo esta generalizando bem.
 \end{itemize}
 
-Outro ponto de atenção necessário é manter o desbalancemento da variável resposta (coluna malicious) nos 
+Outro ponto de atenção necessário é manter o desbalancemento da variável resposta nos 
 conjuntos acima, dado que há mais requisições maliciosas do que não maliciosas. 
 
 Por fim, dados categóricos foram transformados em números usando a técnica de OneHotEncode. Este e o item
@@ -110,7 +110,7 @@ As mesmas colunas da seção anterior foram usadas para treinar uma árvore de d
 o modelo teve uma acurácia de 1 nos dados de treino e teste. 
 
 Para entender como a classificação está sendo realizada, exibimos árvore final na imagem \ref{fig:primeira_arvore}. Nesse sentido, 
-como os dados parassaram por um pré-processamento de OneHotEncoder vale mencionar o que significam cada índica em X:
+como os dados parassaram por um pré-processamento de OneHotEncoder vale mencionar o que significam cada índice em X:
 
 \begin{itemize}
     \item X[0] e X[1]: é a coluna statuscode.
@@ -126,7 +126,7 @@ como os dados parassaram por um pré-processamento de OneHotEncoder vale mencion
 \end{figure}
 
 Vemos que a árvore esta usando majoritariamente os dados da coluna navegador 
-para realizar a classifição, o que não faz sentido, dado que esse dado foi simulado e o 
+para realizar a classifição, o que não faz sentido, uma vez que esse dado foi simulado e o 
 navegador não tem nenhuma relação com os ataques. Então removemos essa coluna da entrada 
 e o resultado está na imagem \ref{fig:segunda_arvore}.
 
@@ -143,7 +143,7 @@ também atingiu uma acurácia de 1.
 
 \subsection{Escolha do modelo e considerações}
 
-Dado o que foi apresentado nas seções anteiories, escolhemos o modelo de árvore de decisão com as colunas
+Dado o que foi apresentado nas seções anteiories, somado aos resultados encontrados no capítulo 2, escolhemos o modelo de árvore de decisão com as colunas
 abaixo para realizar os experimentos e valida-lo em dados reais. 
 
 \begin{itemize}
@@ -163,6 +163,5 @@ do log foram suficientes para conseguir uma acurácia considerada boa.
 \subsection{Testes em dados reais}
 
 De posse dos dados reais mencionados na seção 4.2.2, executamos o modelo escolhido neles e atingimos 
-uma acurácia de aproximadamente 0.93 nos dados de teste, o que consideramos próximos dos resultados 
-obtidos nos artigos do capítulo 2, porém com um modelo mais simples. Portanto, definitivamente definitivamente
+uma acurácia de aproximadamente 0.93 no conjunto de teste. Portanto, definitivamente definitivamente
 seguimos com ele nos experimentos.

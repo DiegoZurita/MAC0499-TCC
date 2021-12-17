@@ -16,11 +16,11 @@ Este capítulo visa apresentar os conceitos que foram utilizados para o desenvol
     \item[xsser] \hfill \\ 
         O xsser é um utilitário que está instalado por padrão no kali linux. Sua função é automatizar a deteccão, exploração e análise de ataques XSS em aplicações web.
     \item[sqlmap] \hfill \\ 
-        O sqlmap é um utilitário que vem está instalado por padrão no kali linux. Sua função é automatizar a detecção e exploração de ataque de SQL injection em aplicações web.
+        O sqlmap é um utilitário que está instalado por padrão no kali linux. Sua função é automatizar a detecção e exploração de ataque de SQL injection em aplicações web.
     \item[Pandas] \hfill \\ 
         O Pandas é uma ferramenta  em python para o processo de análise de dados, especificamente neste trabalho, foi utilizado para realizar o ETL e analise dos logs coletados.
     \item[DVWA] \hfill \\ 
-        DVWA é uma aplicação web com falhas de segurança conhecidas que podem ser exploradas no ambiente local e controlado.
+        DVWA é uma aplicação web com falhas de segurança conhecidas que podem ser exploradas no ambiente local e controlado, facilitando assim a simulação de ataques.
   \end{description}
 
 \section{Modelos}
@@ -38,7 +38,7 @@ Este capítulo visa apresentar os conceitos que foram utilizados para o desenvol
 
     Este modelo é útil pois a sua interpretabilidade é alta.
 
-    \item[Florestas aleatórias] \hfill \\ Florestas aleatórias é um modele de aprendizagem de máquina de combina árvores de decisão. Isto é, uma certa quantidade de árvores são treinadas independetes uma das outras, utilizando diferentes partes do conjunto de dados. \\ 
+    \item[Florestas aleatórias] \hfill \\ Florestas aleatórias é um modele de aprendizagem de máquina de combina árvores de decisão. Isto é, uma certa quantidade de árvores são treinadas de maneira independente uma da outra, utilizando diferentes partes do conjunto de dados. \\ 
     E para realizar a classificação, cada árvore realiza uma classificação (voto) e o resultado final da floresta é a classe com mais votos, como ilustrado na image abaixo:\\
 
     \begin{figure}
@@ -54,7 +54,7 @@ Este capítulo visa apresentar os conceitos que foram utilizados para o desenvol
 
 \begin{description}
     \item[scikit-learn] \hfill \\ Scikit-learn é uma ferramenta que implementa algoritmos de aprendizagem de máquina, supervisionados e não supervisionados. Em particular, o modelo de árvore de decisão e floresta aletória.\\ 
-    Além disso, ela integra com o ecossistema python, isto é: numpy, pandas e matplotlib. Além de fornecer uma interface sólida, que facilita o seu uso. 
+    Além disso, ela integra com o ecossistema python, isto é: numpy, pandas e matplotlib. E também fornece uma interface sólida, que facilita o seu uso. 
 
     \item[Apache Spark] \hfill \\ Apache Spark é uma ferramenta para trabalhar com aprendizagem de máquina de maneira distribuida ou em um único nó. \\
     Assim como o scikit-learn, há alguns modelos implementados que estão pronto para ser utilizados, em particular, há implementações de árvore de decisão e floresta aleatória. \\
