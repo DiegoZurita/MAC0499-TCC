@@ -17,7 +17,7 @@ apenas na última seção deste capítulo mostramos o desempenho do modelo escol
 \section{Estrutura dos dados}
 
 No final do capítulo anterior mostrou-se como os arquivos brutos de logs foram transformados
-para um formato tabular. As colunas neles contidas podem ser vistas na Tabela \ref{tab:exemplo_log}. 
+para um formato tabular. As colunas neles contidas podem ser vistas nas tabelas \ref{tab:exemplo_log} e \ref{tab:exemplo_log-2}. 
 A seguir é apresentado um dicionário do que significa cada coluna:
 
 
@@ -38,19 +38,42 @@ A seguir é apresentado um dicionário do que significa cada coluna:
 
 \begin{tabular}{|l|l|l|l|l|l|l|l|}
 \hline
-    ipaddress & dateandtime & url & statuscode & bytessent & refferer & useragent & malicious \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /index.php & 200 & 2937 & """-""" & "Mozilla/5.0 ..." & 0 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /index.php & 200 & 2937 & """-""" & "Mozilla/5.0 ..." & 0 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /vulnerabilities/sqli\_blind/ & 200 & 1711 & """-""" & "Mozilla/5.0 ..." & 0 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /vulnerabilities/sqli/?extraParam=... & 200 & 1675 & """-""" & "Mozilla/5.0 ..." & 0 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /vulnerabilities/xss\_d/?extraParam=.... & 200 & 1839 & """-""" & "Mozilla/5.0 ..." & 1 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /vulnerabilities/sqli\_blind/?extraParam.... & 200 & 1711 & """-""" & "Mozilla/5.0 ..." & 0 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /about.php & 200 & 2306 & """-""" & "Mozilla/5.0 ..." & 0 \\ \hline
-    192.168.0.219 & 13/May/2021:23:38:05 -0400 & /vulnerabilities/xss\_r/ & 200 & 1686 & """-""" & "Mozilla/5.0 ..." & 1 \\ \hline
+ipaddress & dateandtime & navegador & statuscode & bytessent & refferer & malicious & qtd\_query\_params \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Safari & 200 & 2937 & """-""" & 0 & 1 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Safari & 200 & 2937 & """-""" & 0 & 0 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 1711 & """-""" & 0 & 0 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 1675 & """-""" & 0 & 1 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 1839 & """-""" & 0 & 2 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 1711 & """-""" & 0 & 1 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 2306 & """-""" & 0 & 0 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 1686 & """-""" & 0 & 0 \\ \hline
+192.168.0.219 & 13/May/2021:23:38:05 -0400 & Chrome & 200 & 1461 & """-""" & 0 & 1 \\ \hline
 \end{tabular}
 
-\caption{Resultado final dos logs.\label{tab:exemplo_log}}
+\caption{Resultado final dos logs - parte 1.\label{tab:exemplo_log}}
 
+\end{sidewaystable}
+
+
+\begin{sidewaystable}
+    \centering
+    
+    \begin{tabular}{|l|l|l|}
+    \hline
+    url\_sem\_query & url & useragent \\ \hline
+    /index.php & /index.php?extraParam=CwDK... & "Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_9\_3)..." \\ \hline
+    /index.php & /index.php & "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10\_6\_5; ar)..." \\ \hline
+    /vulnerabilities/sqli\_blind/ & /vulnerabilities/sqli\_blind/ & "Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_10\_1)..." \\ \hline
+    /vulnerabilities/sqli/ & /vulnerabilities/sqli/?extraParam=DfoQ... & "Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_8\_3)..." \\ \hline
+    /vulnerabilities/xss\_d/ & /vulnerabilities/xss\_d/?extraParam=QDIa...\&extraParam2=bBj... & "Mozilla/5.0 (Windows NT 10.0; Win64; x64)..." \\ \hline
+    /vulnerabilities/sqli\_blind/ & /vulnerabilities/sqli\_blind/?extraParam=Sodj... & "Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_9\_2)..." \\ \hline
+    /about.php & /about.php & "Mozilla/5.0 (Windows NT 6.2; WOW64)..." \\ \hline
+    /vulnerabilities/xss\_r/ & /vulnerabilities/xss\_r/ & "Mozilla/5.0 (Windows NT 5.1)..." \\ \hline
+    /vulnerabilities/weak\_id/ & /vulnerabilities/weak\_id/?extraParam=isBe... & "Mozilla/5.0 (Macintosh; Intel Mac OS X 10\_9\_3)..." \\ \hline
+    \end{tabular}
+    
+    \caption{Resultado final dos logs - parte 2.\label{tab:exemplo_log-2}}
+    
 \end{sidewaystable}
 
 De posse dessas colunas que estão nos logs, mais 3 colunas foram criadas:
@@ -80,11 +103,9 @@ anterior foram feitos com o auxílio dos utilitários de pré-processamento de d
 
 \section{Modelo base}
 
-O modelo de florestas aleatórias foi escolhido como modelo base. Essa escolha se deve ao fato dos autores 
-terem uma familiaridade com ele de projetos anteriores. 
-
-Para avaliar o modelo, as colunas abaixo foram escolhidas de maneira árbitrária, ja que neste ponto 
-queríamos saber se modelos de árvores resolveriam nosso problema.
+O modelo de florestas aleatórias foi escolhido como modelo base. Para avaliar o modelo, as colunas 
+abaixo foram escolhidas de maneira árbitrária, ja que neste ponto queríamos saber se modelos de 
+árvores resolveriam nosso problema.
 
 \begin{itemize}
     \item statuscode
