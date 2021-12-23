@@ -11,18 +11,28 @@ por meio de logs já foi estudado em outros trabalhos. Abaixo cito os artigos qu
 serviram de referência e qual modelo foi utilizado.
 
 \begin{itemize}
-    \item \cite{ref:art3}: regras estabelecidas manualmente após uma análise dos logs,
-    isto é, nenhum modelo de aprendizagem de máquina tradicional foi usado.
-    \item \cite{ref:art4}: árvores de decisão e SVM.
-    \item \cite{ref:art6}: árvores de decisão e redes neurais.
-    \item \cite{ref:art2}: naive bayes.
-    \item \cite{ref:art7}: redes neurais.
-    \item \cite{ref:art1}: árvores de decisão e, assim como o primeiro item, utilizou 
-    regras pre estabelecidas.
+    \item \cite{ref:art3}: este trabalho analisa uma fase anterior dos ataques HTTP, a etapa
+    de exploração de vulnerabilidades. Nessa etapa, em geral, um crawler pode ser executado 
+    em busca de possiveis vulnerabilidades, e nesse sentido o proceso distinguir tais 
+    requisições das requisições de usuários ajuda na prevenção de ataques. Para isso, o 
+    trabalho propos regras estabelecidas manualmente após uma análise dos logs, isto é, 
+    nenhum modelo de aprendizagem de máquina tradicional foi usado.
+
+    \item \cite{ref:art6}: este trabalho visa detectar atividades maliciosas no ambiente 
+    da nuvem. Uma vez que sua adoção vem crescendo, a supercie de ataque cresce propocionalmente.
+    Nesse sentido, o trabalho propõem analisar arquivos de logs gerados pela nuvem e por aplicações
+    web para treinar modelos de aprendizagem de máquina e automatizar a sua deteccção. Para isso
+    usou modelo de árvore de decisão e redes neurais.
+
+    \item \cite{ref:art2}: similar aos trabalhos anteriores, este trabalho propõe automatizar
+    a detecção de ataques utilizando aprendizagem de máquina, contúdo, neste trabalho
+    o foco principal é o SQL injection motivado pela grave falta de privacidade 
+    que esta falha pode proporcionar. Rara isso propõe um modelo de naive bayes.
 \end{itemize}
 
-Observar estes trabalhos direcionou a pesquisa no sentido de qual modelo avaliar, além de como 
-e quais dados foram utilizados.
+Observar estes trabalhos direcionou a pesquisa no sentido de que os modelos de 
+aprendizagem de máquina podem ser utilizados para detectar falhas de segurança
+em servidores HTTP, além disso qual modelo avaliar, e por fim quais dados foram utilizados.
 
 Vale deixar registrado, um agradecimento ao autor Jaron Fontaine do trabalho \cite{ref:art6}, que gentilmente
 indicou quais logs reais foram usados em seu trabalho e onde encontrá-los.

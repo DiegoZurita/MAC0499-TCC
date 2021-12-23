@@ -186,5 +186,16 @@ do log foram suficientes para conseguir uma acurácia considerada boa.
 \section{Testes em dados reais}
 
 De posse dos dados reais mencionados na Seção 4.2.2, executamos o modelo escolhido neles e atingimos 
-uma acurácia de aproximadamente 0.93 no conjunto de teste. Portanto, definitivamente
+uma acurácia de aproximadamente 0,93 no conjunto de teste. Portanto, definitivamente
 seguimos com ele nos experimentos.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\textwidth]{figuras/acuracia_em_dados_reais.png}
+    \caption{A acurácia do modelos em dados reais pela quantidade de linhas \label{fig:classificacao_por_quantidade_de_linhas}}
+\end{figure}
+
+Na Figura \ref{fig:classificacao_por_quantidade_de_linhas} vemos como a acurácia 
+estabiliza em 0,93 a medida que mais dados são adicionados no conjunto de teste, 
+ou seja, concluímos que o modelo esta generalizando bem.
