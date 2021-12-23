@@ -6,29 +6,26 @@
 \chapter{Modelos}
 \label{cap:models}
 
-Este capitulo tem como objetivo mostrar como os modelos foram escolhidos e apresentar
-métricas nos dados simulados e reais.
-
-Os resultados aqui apresentados foram obtidos no ambiente do Google Colab, uma vez que 
-que este foi o ambiente escolhido para compartilhar os resultados dos nossos experimentos. 
-
-Por fim, durante a seleção dos modelos apenas os dados simulados foram usados, uma vez
-que ainda não estavamos de posse dos logs reais, portanto apenas na última seção deste capítulo
-mostramos a performance do modelo escolhido nos dados reais.
+Este capítulo tem como objetivo mostrar como os modelos foram escolhidos e apresentar
+métricas nos dados simulados e reais. Os resultados aqui apresentados foram obtidos no 
+ambiente do Google Colab, uma vez que que este foi o ambiente escolhido para compartilhar 
+os resultados dos nossos experimentos. Por fim, durante a seleção dos modelos apenas os dados 
+simulados foram usados, uma vez que ainda não estávamos de posse dos logs reais, portanto 
+apenas na última seção deste capítulo mostramos o desempenho do modelo escolhido nos dados reais.
 
 
-\subsection{Estrutura dos dados}
+\section{Estrutura dos dados}
 
-No final do capitulo anterior mostrou-se como os arquivos brutos de logs foram transformados
-para um formato tabular, as colunas nele contidas podem ser vistos na tabela \ref{tab:exemplo_log}. 
-Aqui forneceremos um dicionário do que significa cada coluna:
+No final do capítulo anterior mostrou-se como os arquivos brutos de logs foram transformados
+para um formato tabular. As colunas neles contidas podem ser vistas na Tabela \ref{tab:exemplo_log}. 
+A seguir é apresentado um dicionário do que significa cada coluna:
 
 
 \begin{itemize}
-    \item ipaddress: o IP do usuário que realizou a requisição.
-    \item dateandtime: a data e hora em que a requisião foi realizada.
+    \item ipaddress: o endereço IP do usuário que realizou a requisição.
+    \item dateandtime: a data e hora em que a requisição foi realizada.
     \item url: a url requisitada.
-    \item statuscode: o codigo HTTP de retorno.
+    \item statuscode: o código HTTP de retorno.
     \item bytessent: quando bytes foram retornados na requisição.
     \item refferer: contém o valor do cabeçalho Refere.
     \item useragent: o agente responsável pela requisição.
@@ -60,34 +57,34 @@ De posse dessas colunas que estão nos logs, mais 3 colunas foram criadas:
 
 \begin{itemize}
     \item url\_sem\_query: armazena a url requisitada sem o paramêtros de consulta.
-    \item qtd\_query\_params: quantidade de paramêtros encontrados na query.
+    \item qtd\_query\_params: quantidade de parâmetros encontrados na query.
     \item navegador: armazena apenas o nome do navegador presente na coluna useragent.
 \end{itemize}
 
 
-\subsection{Preparação dos dados}
+\section{Preparação dos dados}
 
-Durante o treino/validação de todos os modelos deste capitulo, o conjunto de dados original foi divido 
-em treino e teste, como explicado abaixo:
+Durante o treino/validação de todos os modelos deste capítulo, o conjunto de dados original foi dividido 
+em treino e teste, como explicado a seguir:
 
 \begin{itemize}
     \item treino: dados que serão usados para treinar o modelo.
-    \item teste: dados não presentes no treino, com o objetivo de verificar se o modelo esta generalizando bem.
+    \item teste: dados não presentes no treino, com o objetivo de verificar se o modelo está generalizando bem.
 \end{itemize}
 
 Outro ponto de atenção necessário é manter o desbalancemento da variável resposta nos 
 conjuntos acima, dado que há mais requisições maliciosas do que não maliciosas. 
 
 Por fim, dados categóricos foram transformados em números usando a técnica de OneHotEncode. Este e o item
-anterior foram feitos com o auxilio dos utilitários de pré-processamento de dados do scikit-learn e do Apache Spark.
+anterior foram feitos com o auxílio dos utilitários de pré-processamento de dados do scikit-learn e do Apache Spark.
 
-\subsection{Modelo base}
+\section{Modelo base}
 
-O modelo de florestar aleatória foi escolhido como modelo base. Essa escolha se deve ao fato dos autores 
+O modelo de florestas aleatórias foi escolhido como modelo base. Essa escolha se deve ao fato dos autores 
 terem uma familiaridade com ele de projetos anteriores. 
 
-Para avaliar o modelo, as colunas abaixo foram escolhidas de maneira árbitrário, ja que neste ponto 
-queriamos saber se modelos de árvores resolveriam nosso problema.
+Para avaliar o modelo, as colunas abaixo foram escolhidas de maneira árbitrária, ja que neste ponto 
+queríamos saber se modelos de árvores resolveriam nosso problema.
 
 \begin{itemize}
     \item statuscode
@@ -98,19 +95,19 @@ queriamos saber se modelos de árvores resolveriam nosso problema.
 
 
 Com este modelo e as colunas mencionadas conseguimos uma acurácia de 1 nos dados de teste. Surprendente, pois 
-não esperavamos esse resultado na primeira tentativa, dado que se trata de um modelo base, logo suspeitamos 
+não esperávamos esse resultado na primeira tentativa, dado que se trata de um modelo base, logo suspeitamos 
 que o modelo estava sobre ajustado nos dados. 
 
 Para ter uma intuição melhor de como o modelo estava realizando a classificação, optamos por experimentar 
-o modelo de árvore de decisão, dado que depurar-lo é possível.
+o modelo de árvore de decisão, dado que depurá-lo é possível.
 
-\subsection{Depurando o modelo - árvore de decisão}
+\section{Depurando o modelo - árvore de decisão}
 
 As mesmas colunas da seção anterior foram usadas para treinar uma árvore de decisão, e novamente
 o modelo teve uma acurácia de 1 nos dados de treino e teste. 
 
-Para entender como a classificação está sendo realizada, exibimos árvore final na imagem \ref{fig:primeira_arvore}. Nesse sentido, 
-como os dados parassaram por um pré-processamento de OneHotEncoder vale mencionar o que significam cada índice em X:
+Para entender como a classificação está sendo realizada, exibimos a árvore final na Figura \ref{fig:primeira_arvore}. Nesse sentido, 
+como os dados passaram por um pré-processamento de OneHotEncoder vale mencionar o que significa cada índice em X:
 
 \begin{itemize}
     \item X[0] e X[1]: é a coluna statuscode.
@@ -125,10 +122,10 @@ como os dados parassaram por um pré-processamento de OneHotEncoder vale mencion
     \caption{Primeira árvore de decisão. \label{fig:primeira_arvore}}    
 \end{figure}
 
-Vemos que a árvore esta usando majoritariamente os dados da coluna navegador 
+Vemos que a árvore está usando majoritariamente os dados da coluna navegador 
 para realizar a classifição, o que não faz sentido, uma vez que esse dado foi simulado e o 
 navegador não tem nenhuma relação com os ataques. Então removemos essa coluna da entrada 
-e o resultado está na imagem \ref{fig:segunda_arvore}.
+e o resultado está na Figura \ref{fig:segunda_arvore}.
 
 
 \begin{figure}
@@ -137,13 +134,13 @@ e o resultado está na imagem \ref{fig:segunda_arvore}.
     \caption{Segunda árvore de decisão. \label{fig:segunda_arvore}}    
 \end{figure}
 
-Esta versão já nos pareceu mais sólida pois ela utiliza a quantidade de paramêtros na query 
-e a quantidade bytes enviados para o cliente, o que está relacionado com os ataques. Além disso,
+Esta versão já nos pareceu mais sólida pois ela utiliza a quantidade de parâmetros na requisição 
+e a quantidade de bytes enviados para o cliente, o que está relacionado com os ataques. Além disso,
 também atingiu uma acurácia de 1.
 
-\subsection{Escolha do modelo e considerações}
+\section{Escolha do modelo e considerações}
 
-Dado o que foi apresentado nas seções anteiories, somado aos resultados encontrados no capítulo 2, escolhemos o modelo de árvore de decisão com as colunas
+Dado o que foi apresentado nas seções anteriores, somado aos resultados encontrados no capítulo 2, escolhemos o modelo de árvore de decisão com as colunas
 abaixo para realizar os experimentos e valida-lo em dados reais. 
 
 \begin{itemize}
@@ -153,15 +150,15 @@ abaixo para realizar os experimentos e valida-lo em dados reais.
 \end{itemize}
 
 Outros modelos mais complexos, como redes neurais ou xgboost, não foram considerados pois o 
-objetivo deste trabalho é usar-lo em computadores onde os recursos, como memória e disco, são
-limitados portanto favorecendo modelos mais simples como o escolhido.
+objetivo deste trabalho é usar o modelo em computadores onde os recursos, como memória e 
+disco, são limitados portanto favorecendo modelos mais simples como o escolhido.
 
 Também vale notar que características dos logs específicas a ataques XSS e SQL Injection, como 
 verificar a existência de uma consulta SQL na url, não foram criadas pois as colunas padrões 
 do log foram suficientes para conseguir uma acurácia considerada boa.
 
-\subsection{Testes em dados reais}
+\section{Testes em dados reais}
 
-De posse dos dados reais mencionados na seção 4.2.2, executamos o modelo escolhido neles e atingimos 
-uma acurácia de aproximadamente 0.93 no conjunto de teste. Portanto, definitivamente definitivamente
+De posse dos dados reais mencionados na Seção 4.2.2, executamos o modelo escolhido neles e atingimos 
+uma acurácia de aproximadamente 0.93 no conjunto de teste. Portanto, definitivamente
 seguimos com ele nos experimentos.

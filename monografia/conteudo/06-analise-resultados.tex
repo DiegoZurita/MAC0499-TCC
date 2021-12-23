@@ -3,15 +3,15 @@
 % para saber mais: https://tex.stackexchange.com/q/78101/183146
 
 %% ------------------------------------------------------------------------- %%
-\chapter{Análise de resultados}
+\chapter{Análise de desempenho}
 \label{cap:results}
 
-Este capítulo apresenta a metodologia e resultados dos experimentos, como também 
+Este capítulo apresenta a metodologia e resultados dos experimentos, bem como 
 expõe a sua análise.
 
 \section{Metodologia}
 
-Dois experimentos foram feitos: o primeiro para verificar a viabilidade do uso 
+Dois experimentos foram realizados: o primeiro para verificar a viabilidade do uso 
 de Raspberry Pi para treinar modelos e o segundo usando-o somente para realizar as
 predições. Em ambos os casos, apenas o modelo de árvore de decisão foi usado.
 
@@ -20,21 +20,21 @@ Para o experimento de treino, a seguinte metodologia foi usada:
 \begin{itemize}
     \item Configuração do Apache Spark nos computadores.
     \item Início do script raspberry-log. 
-    \item Rodar 20 vezes o script de treino e obtém os seus tempos.
+    \item Rodar 20 vezes o script de treino e obter os seus tempos.
     \item Fim do script raspberry-log. 
-    \item Coleto as informações obtidas: tempo, consumo de memória e CPU.
+    \item Coletar as informações necessárias: tempo, consumo de memória e CPU.
 \end{itemize}
 
-Para avalisar o desempenho na tarefa de predicões, três subconjuntos
+Para avaliar o desempenho na tarefa de predicões, três subconjuntos
 dos logs reais foram usados: com 1000, 5000 e 10000 linhas. E para isso a seguinte 
 metodologia foi usada: 
 
 \begin{itemize}
     \item Configuração do Apache Spark nos computadores.
     \item Início do script raspberry-log. 
-    \item Rodar 20 vezes o script de predição usando a entrada respectiva e obtem os seus tempos.
+    \item Rodar 20 vezes o script de predição usando a entrada respectiva e obter os seus tempos.
     \item Fim do script raspberry-log. 
-    \item Coleto as informações coletas: tempo, consumo de memória e CPU.
+    \item Coletar as informações necessárias: tempo, consumo de memória e CPU.
 \end{itemize}
 
 Os passos de ambos os casos foram executados no Macbook e no Raspberry Pi.
@@ -49,15 +49,15 @@ foi usado.
 \subsection{Controle}
 
 O objetivo deste experimento foi medir o consumo de memória e CPU dos computadores
-em repouso. Para isso o script raspberry-log foi executado por aproximademente 10 horas, 
+em repouso. Para isso o script raspberry-log foi executado por aproximadamente 10 horas, 
 para termos valores mais confiáveis. Vale ressaltar que nenhum outro programa estava sendo 
 executado, apenas o nosso script.
 
-O macbook em repouso consumiu 5.4\% de CPU com um desvio padrão de 0.6 
-e 679.34MB de memória com um 30 de desvio padrão.
+O macbook em repouso consumiu 5,4\% de CPU com um desvio padrão de 0,6 
+e 679,34MB de memória com 30 de desvio padrão.
 
-O Raspberry Pi em repouso consumiu 0.2\% de CPU com um desvio padrão de 0.05 
-e 51.9MB de memória com um 0.59 de desvio padrão.
+O Raspberry Pi em repouso consumiu 0,2\% de CPU com um desvio padrão de 0,05 
+e 51,9MB de memória com 0,59 de desvio padrão.
 
 Os valores acima foram considerados estáveis, portanto considerados como os valores
 do computador em repouso.
@@ -66,12 +66,12 @@ do computador em repouso.
 
 \subsection{Treinamento}
 
-Aqui apresentamos os resultados do experimento onde usar o computador para treinar 
-modelos é utilizado. Aqui um conjunto de dados de aproximademente 7000 linhas foi 
+Aqui apresentamos os resultados do experimento onde foi usado o computador para treinar os
+modelos. Aqui um conjunto de dados de aproximademente 7000 linhas foi 
 usado para treinar e 3000 para validar o modelo.
 
-O resumo dos valores coletados estão na tabela \ref{tab:comparativo_treino}, entre parentesis está desvio
-padrão.
+O resumo dos valores coletados estão na Tabela \ref{tab:comparativo_treino}. O desvio 
+padrão está informado entre parênteses.
 
 \begin{table}[!ht]
     \centering
@@ -83,12 +83,12 @@ padrão.
         Tempo & 18.54s (0.16) & 110.96s (2.12) \\ \hline
     \end{tabular}
 
-    \caption{Comparativo métricas no experimento de treino.\label{tab:comparativo_treino}}
+    \caption{Comparativo de métricas no experimento de treino.\label{tab:comparativo_treino}}
 \end{table}
 
 Note que o tempo médio de treinamento do Raspberry Pi é aproximademente 10 vezes maior do que no Macbook,
 contudo isso não inviabiliza seu uso para treinar modelos, considerando que nesta etapa é natural
-esperar que treinar modelos em grande quantidades de dados leve um tempo consideravel.
+esperar que treinar modelos em grande quantidades de dados leve um tempo considerável.
 
 Observa-se também que o consumo de CPU do Raspberry Pi foi consideravelmente maior do que o observado 
 em repouso, quando comparado ao Macbook. Nesse sentido, o treino deve ser feito preferencialmente 
@@ -97,17 +97,18 @@ em um computador com configurações similares ao do Macbook utilizado.
 
 \subsection{Classificação}
 
-Este experimento apenas realiza a classificação dos dados usando um modelo previamente treinado, 
+Este experimento realiza a classificação dos dados usando um modelo previamente treinado, 
 da seguinte maneira:
 
 \begin{itemize}
     \item Trienamos o modelo previamente e salvamos no disco.
     \item Outro script carrega esse modelo na memória. 
-    \item Com o modelo na memória, apenas a classificação é executada.
+    \item Com o modelo na memória, a classificação é executada.
 \end{itemize}
 
 
-Os resultados desse experimento estão nas tabelas abaixo:
+Os resultados desse experimento estão nas tabelas \ref{tab:comparativo_classificacao_1000}, 
+\ref{tab:comparativo_classificacao_5000} e \ref{tab:comparativo_classificacao_10000}:
 
 
 \begin{table}[!ht]
@@ -153,7 +154,7 @@ Os resultados desse experimento estão nas tabelas abaixo:
 
 
 Destas tabelas, observa-se que o tempo médio de execução do Raspberry Pi ainda é maior 
-do que o do Macbook, classificando em média 604 logs/s e 107 logs/s, respectivamente. Isto é,
+do que o do Macbook, classificando em média 107 logs/s e 604 logs/s, respectivamente. Isto é,
 o primeiro deve demorar, em média, 6 vezes mais para realizar classificações do que um computador tradicional 
 com as configurações similares ao do Macbook utilizado, o que pode ser um impeditivo dependendo do 
 volume de dados e da urgência em obter os resultados.

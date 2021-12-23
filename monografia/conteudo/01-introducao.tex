@@ -6,10 +6,10 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Com a variedade de serviços oferecidos pela internet, a quantidade de requisições
+Com a variedade de serviços oferecidos pela Internet, a quantidade de requisições
 que são feitas a um servidor web aumenta. De acordo com \cite{facebook:topProblems}, o Facebook em 2014 recebia
 uma quatidade de consultas da ordem de bilhões por segundo. Nesse sentido é esperado que
-também aumente o número de requisições maliciosas, como por exemplo SQL injection que está 
+também aumente o número de requisições maliciosas, como por exemplo SQL injection, que está 
 no top 10 da OWASP \cite{owasp:top10}, uma organização sem fins lucrativos que visa melhorar a segurança em 
 softwares, através da publicação de artigos, metodologias e documentação de maneira gratuita.
 
@@ -21,31 +21,32 @@ resultado desses modelos.
 Além disso, é desejável que esse projeto tenha um custo baixo em termos financeiros, de rede e
 de consumo de energia. Para isso, se tem proposto o uso de hardware de baixo custo para implantação 
 desse tipo de sistema. Em \cite{sbrc_estendido:lucas} há uma análise que conclui que é possível usar Raspberry Pi como nó de
-um cluster de processamento de dados.
+um cluster de processamento de dados, sendo que esses dados podem ser as requisições a um servidor HTTP.
 
-\subsection{Objetivo}
+\section{Objetivos}
 
-O objetivo deste trabalho de conclusão de curso é construir modelos de aprendizagem de máquina para 
-detectar requisições maliciosas. Tais modelos utilizam logs de servidores HTTP para detectar 
+O objetivo principal deste trabalho de conclusão de curso é construir modelos de aprendizagem de máquina para 
+detectar requisições HTTP maliciosas. Tais modelos analisam logs de servidores HTTP para detectar 
 potenciais ataques de SQL Injection e XSS, e devem ser executados em períodos fixos do dia, isto é, 
-não está no escopo deste trabalho encontrar modelos que sejam executados em tempo real. E por fim, 
-verificar sua performance em um Raspberry Pi. 
+não está no escopo deste trabalho encontrar modelos que sejam executados em tempo real. Um segundo objetivo é, 
+verificar o desempenho desses modelos quando executados em um Raspberry Pi. 
 
-Portanto, avançar o que foi realizado no TCC “Análise de Desempenho de Computadores de Baixo Custo em um Sistema de 
+Em relação a trabalhos anteriores, este TCC avança o que foi realizado no TCC “Análise de Desempenho de Computadores de Baixo Custo em um Sistema de 
 Detecção de Intrusão” de Lucas Seiki Oshiro \cite{tcc:lucas}.
 
-\subsection{Resultado alcançados}
+\section{Resultados alcançados}
 
 Este trabalho de conclusão de curso avaliou modelos de aprendizagem de máquina em dados simualdos e 
-reais, até concluir que o modelo de árvore de decisão é o melhor para o objetivo aqui estabelcido.
+reais, até concluir que o modelo de árvore de decisão é o melhor para o objetivo aqui estabelecido, 
+chegando a uma acurácia próxima dos 93\% em dados reais.
 
-Além disso, comparou a performance nas tarefas de treinamento e classificação em um Macbook e um 
+Além disso, comparou o desempenho nas tarefas de treinamento e classificação em um Macbook e um 
 Raspberry Pi, e concluiu que o último pode ser usado nas tarefas de classificação desde que o tempo
-não seja um fator impeditivo.
+não seja um fator impeditivo, pois o tempo de classificação é, em média, 6 vezes maior.
 
-\subsection{Organização da monografia}
+\section{Organização da monografia}
 
-Os próximos capítulos desta monografia estão dividos da seguinte maneira: 
+Os próximos capítulos desta monografia estão divididos da seguinte maneira: 
 
 \begin{itemize}
     \item Capítulo 2: Trabalhos relacionados a este TCC e resultados encontrados.
