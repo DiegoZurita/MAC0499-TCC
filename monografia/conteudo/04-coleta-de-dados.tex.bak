@@ -120,14 +120,14 @@ a URL de acesso, o código HTTP de retorno, a quantidade de bytes retornada e o 
 Por exemplo, na última linha das sequências apresentadas acima, temos os seguintes dados:
 
 \begin{itemize}
-    \item 127.0.0.1: endereço IP de origem, neste caso, o mesmo computador onde está a aplicação Apache.
+    \item 127.0.0.1: endereço IP de origrem, neste caso, o mesmo computador onde está a aplicação Apache.
     \item [28/F...:28 -0400]: data e hora da requisição
-    \item GET: é o verbo HTTP que foi utilizado. Ele significa que o usuário quer obter dados do servidor.
+    \item GET: é o verbo HTTP que foi utilizado. Ele significa que o usuário quer obter dados so servidor.
     \item /url2 HTTP/1.0: A URL que o usuário quer acessar e o versão do protocolo HTTP usado.
     \item 200: é código HTTP de resposta, neste caso, representa sucesso.
     \item 9: a quantidade de bytes retornados pela requisição. 
-    \item ApacheB: Representa o agente que realizou a requisição, aqui em especifico ApacheB é uma
-    abreviação para ApacheBenchmark o agente de um utilitário chamado ab \footnote{\url{https://httpd.apache.org/docs/2.4/programs/ab.html}}, 
+    \item ApacheB: Representa o agente que realizou a requisição, aqui em espcifíco ApacheB é uma
+    abreviação apra ApacheBenchmark o agente de um útilitário chamado ab \footnote{\url{https://httpd.apache.org/docs/2.4/programs/ab.html}}, 
     qual é usado para automatizar um certa quantidade. de requisições a uma certa URL.
     Nesse campo, em geral, estão as informações do navegador, com Google Chrome ou Firefox.
 \end{itemize}
@@ -135,15 +135,15 @@ Por exemplo, na última linha das sequências apresentadas acima, temos os segui
 
 \subsection{Dados simulados}
 
-No inicio do projeto não foi possível encontrar logs reais que fossem públicos. Algumas fontes
-consideradas foram o: Kaggle \footnote{\url{https://www.kaggle.com/datasets}} e o IEEE Data Port 
+No ínicio do projeto não foi possível encontrar logs reais que fossem públicos. Algumas fontes
+considearadas foram o: Kaggle \footnote{\url{https://www.kaggle.com/datasets}} e o IEEE Data Port 
 \footnote{\url{https://ieee-dataport.org/}}. Por causa disso, tomamos a decisão de simular requisições maliciosas 
 e não maliciosas para então coletar seus logs. Para simular tais requisições três condições deve 
 ser satisfeitas pois pensamos que seria prudente encontrar em logs reais, são elas:
 
 \begin{itemize}
     \item A quantidade de requisições não maliciosas deve ser consideravelmente
-    superior a quantidade de requisições maliciosas. Isto é, os dados devem estar desbalanceados.
+    superior a quantidade de requisiçõe maliciosas. Isto é, os dados devem estar desbalanceados.
     \item Certas páginas devem ser mais acessadas do que outras, isso se dá por conta 
     de que em sites há páginas que recebem mais acessos do que as outras, por exemplo, a página inicial.
     \item Deve haver uma predominância de acessos vindo dos navegadores Google Chrome e Firefox pelo fato 
@@ -200,7 +200,7 @@ dados foi uma tarefa trivial.
 
 \subsection{Dados reais}
 
-Em paralelo às simulações anteriores, procuramos logs de servidores reais para que os modelos 
+Em parelalo às simulações anteriores, procuramos logs de servidores reais para que os modelos 
 encontrados fossem testados e validades neles. 
 
 Para isso entramos em contato com os autores dos artigos mencionados no Capítulo 2, e 
@@ -226,7 +226,7 @@ Apesar dos dados serem reais, a competição tratava-se de identificar, a partir
 eram maliciosas e também se o ataque foi realizado com sucesso ou não. 
 
 Nesse sentido, isso foi um desafio, dado que a fonte da verdade não era pública e a quantidade de logs 
-coletados é consideravelmente grande. Então classificá-los manualmente foi necessário e para 
+coletados é consideravelmente grande. Então classifica-los manualmente foi necessário e para 
 isso foi utilizado o script que se encontra no apêndice.
 
 No fim, foram classificadas aproximadamente 10000 linhas e este conjunto de logs foi utilizado para validar os modelos em dados
@@ -235,7 +235,7 @@ reais.
 \subsection{Estruturando os logs}
 
 Os logs em seu formato bruto não podem ser usados como entradas para modelos de aprendizagem
-de máquina, então um pré-processamento foi necessário. Por conta do padrão mencionado no  início deste capítulo, 
+de máquina, então um pre-processamento foi necessário. Por conta do padrão mencionado no  início deste capítulo, 
 foi possível criar um script que os estruturasse. Abaixo um trecho de código
 que foi usado nessa tarefa:
 

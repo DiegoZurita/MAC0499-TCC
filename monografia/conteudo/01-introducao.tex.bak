@@ -8,7 +8,7 @@
 
 Com a variedade de serviços oferecidos pela Internet, a quantidade de requisições
 que são feitas a um servidor web aumenta. De acordo com \cite{facebook:topProblems}, o Facebook em 2014 recebia
-uma quantidade de consultas da ordem de bilhões por segundo. Nesse sentido é esperado que
+uma quatidade de consultas da ordem de bilhões por segundo. Nesse sentido é esperado que
 também aumente o número de requisições maliciosas, como por exemplo SQL injection, que está 
 no top 10 da OWASP \cite{owasp:top10}, uma organização sem fins lucrativos que visa melhorar a segurança em 
 softwares, através da publicação de artigos, metodologias e documentação de maneira gratuita.
@@ -36,7 +36,7 @@ Detecção de Intrusão” de Lucas Seiki Oshiro \cite{tcc:lucas}.
 
 \section{Resultados alcançados}
 
-Este trabalho de conclusão de curso avaliou modelos de aprendizagem de máquina em dados simulados e 
+Este trabalho de conclusão de curso avaliou modelos de aprendizagem de máquina em dados simualdos e 
 reais, até concluir que o modelo de árvore de decisão é o melhor para o objetivo aqui estabelecido, 
 chegando a uma acurácia próxima dos 93\% em dados reais.
 

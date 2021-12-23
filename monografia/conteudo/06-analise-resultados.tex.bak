@@ -23,14 +23,14 @@ Para o experimento de treino, a seguinte metodologia foi usada:
     \footnote{Este script foi desenvolvido no trabalho \cite{tcc:lucas}. Ele captura dados
     de utilização de memória, disco e temperatura}. 
     \item Rodar 20 \footnote{É necessário rodar mais de uma vez para obter dados mais 
-    confiáveis, evitando valores discrepantes. O número 20 foi escolhido de experimentos 
+    confiávies, evitando valores discrepantes. O número 20 foi escolhido de experimentos 
     vistos e realizados nas disciplinas MAC0426 e MAC0219 do curso de ciência da computação do IME-USP.} 
     vezes o script de treino e obter os seus tempos.
     \item Fim do script raspberry-log. 
     \item Coletar as informações necessárias: tempo, consumo de memória e CPU.
 \end{itemize}
 
-Para avaliar o desempenho na tarefa de predições, três subconjuntos
+Para avaliar o desempenho na tarefa de predicões, três subconjuntos
 dos logs reais foram usados: com 1000, 5000 e 10000 linhas. E para isso a seguinte 
 metodologia foi usada: 
 
@@ -72,7 +72,7 @@ do computador em repouso.
 \subsection{Treinamento}
 
 Aqui apresentamos os resultados do experimento onde foi usado o computador para treinar os
-modelos. Aqui um conjunto de dados de aproximadamente 7000 linhas foi 
+modelos. Aqui um conjunto de dados de aproximademente 7000 linhas foi 
 usado para treinar e 3000 para validar o modelo.
 
 O resumo dos valores coletados estão na Tabela \ref{tab:comparativo_treino}. O desvio 
@@ -91,7 +91,7 @@ padrão está informado entre parênteses.
     \caption{Comparativo de métricas no experimento de treino.\label{tab:comparativo_treino}}
 \end{table}
 
-Note que o tempo médio de treinamento do Raspberry Pi é aproximadamente 10 vezes maior do que no Macbook,
+Note que o tempo médio de treinamento do Raspberry Pi é aproximademente 10 vezes maior do que no Macbook,
 contudo isso não inviabiliza seu uso para treinar modelos, considerando que nesta etapa é natural
 esperar que treinar modelos em grande quantidades de dados leve um tempo considerável.
 
@@ -106,7 +106,7 @@ Este experimento realiza a classificação dos dados usando um modelo previament
 da seguinte maneira:
 
 \begin{itemize}
-    \item Treinamos o modelo previamente e salvamos no disco.
+    \item Trienamos o modelo previamente e salvamos no disco.
     \item Outro script carrega esse modelo na memória. 
     \item Com o modelo na memória, a classificação é executada.
 \end{itemize}
@@ -165,5 +165,5 @@ com as configurações similares ao do Macbook utilizado, o que pode ser um impe
 volume de dados e da urgência em obter os resultados.
 
 Além disso, era esperado que o experimento com 10000 linhas levasse pelo menos o dobro de tempo
-do que o com 5000 linhas, contudo isso não se observa principalmente pela paralelização 
+do que o com 5000 linhas, contúdo isso não se observa principalmente pela parelelização 
 aplicada pelo Apache Spark, diminuindo assim essa distância.

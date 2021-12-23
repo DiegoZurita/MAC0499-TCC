@@ -24,7 +24,7 @@ trabalhos futuros.
 
 A crítica principal a este trabalho foi ter utilizado o Apache Spark em um único nó 
 de Raspberry Pi, pois esse não é o objetivo da ferramenta, contudo o experimento e 
-script já estavam prontos e alterá-los nos tomaria tempo que não dispúnhamos. 
+script já estavam prontos e alterá-los nos tomaria tempo que não dispunhamos. 
 
 Por fim, durante o trabalho o conhecimento das seguintes disciplinas foi utilizado: sistemas
 operacionais para entender como utilizar da melhor maneira cada computador, ciência e engenharia

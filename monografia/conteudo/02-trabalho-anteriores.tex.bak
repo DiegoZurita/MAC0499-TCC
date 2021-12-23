@@ -19,13 +19,13 @@ serviram de referência e qual modelo foi utilizado.
     nenhum modelo de aprendizagem de máquina tradicional foi usado.
 
     \item \cite{ref:art6}: este trabalho visa detectar atividades maliciosas no ambiente 
-    da nuvem. Uma vez que sua adoção vem crescendo, a superfície de ataque cresce proporcionalmente.
+    da nuvem. Uma vez que sua adoção vem crescendo, a superficie de ataque cresce propocionalmente.
     Nesse sentido, o trabalho propõem analisar arquivos de logs gerados pela nuvem e por aplicações
-    web para treinar modelos de aprendizagem de máquina e automatizar a sua detecção. Para isso
+    web para treinar modelos de aprendizagem de máquina e automatizar a sua deteccção. Para isso
     usou modelo de árvore de decisão e redes neurais.
 
     \item \cite{ref:art2}: similar aos trabalhos anteriores, este trabalho propõe automatizar
-    a detecção de ataques utilizando aprendizagem de máquina, contudo, neste trabalho
+    a detecção de ataques utilizando aprendizagem de máquina, contúdo, neste trabalho
     o foco principal é o SQL injection motivado pela grave falta de privacidade 
     que esta falha pode proporcionar. Rara isso propõe um modelo de naive bayes.
 \end{itemize}

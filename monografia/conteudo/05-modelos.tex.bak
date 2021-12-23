@@ -80,7 +80,7 @@ ipaddress & dateandtime & navegador & statuscode & bytessent & refferer & malici
 De posse dessas colunas que estão nos logs, mais 3 colunas foram criadas:
 
 \begin{itemize}
-    \item url\_sem\_query: armazena a url requisitada sem o parâmetros de consulta.
+    \item url\_sem\_query: armazena a url requisitada sem o paramêtros de consulta.
     \item qtd\_query\_params: quantidade de parâmetros encontrados na query.
     \item navegador: armazena apenas o nome do navegador presente na coluna useragent.
 \end{itemize}
@@ -96,7 +96,7 @@ em treino e teste, como explicado a seguir:
     \item teste: dados não presentes no treino, com o objetivo de verificar se o modelo está generalizando bem.
 \end{itemize}
 
-Outro ponto de atenção necessário é manter o desbalanceamento da variável resposta nos 
+Outro ponto de atenção necessário é manter o desbalancemento da variável resposta nos 
 conjuntos acima, dado que há mais requisições maliciosas do que não maliciosas. 
 
 Por fim, dados categóricos foram transformados em números usando a técnica de OneHotEncode. Este e o item
@@ -105,7 +105,7 @@ anterior foram feitos com o auxílio dos utilitários de pré-processamento de d
 \section{Modelo base}
 
 O modelo de florestas aleatórias foi escolhido como modelo base. Para avaliar o modelo, as colunas 
-abaixo foram escolhidas de maneira arbitraria, já que neste ponto queríamos saber se modelos de 
+abaixo foram escolhidas de maneira árbitrária, ja que neste ponto queríamos saber se modelos de 
 árvores resolveriam nosso problema.
 
 \begin{itemize}
@@ -116,7 +116,7 @@ abaixo foram escolhidas de maneira arbitraria, já que neste ponto queríamos sa
 \end{itemize}
 
 
-Com este modelo e as colunas mencionadas conseguimos uma acurácia de 1 nos dados de teste. Surpreendente, pois 
+Com este modelo e as colunas mencionadas conseguimos uma acurácia de 1 nos dados de teste. Surprendente, pois 
 não esperávamos esse resultado na primeira tentativa, dado que se trata de um modelo base, logo suspeitamos 
 que o modelo estava sobre ajustado nos dados. 
 
@@ -142,12 +142,12 @@ como os dados passaram por um pré-processamento de OneHotEncoder vale mencionar
     \centering
     \includegraphics[width=.9\textwidth]{figuras/primeira-arvore.png}
     \caption{Primeira árvore de decisão. Os nós laranjas representam a classe not\_malicious 
-    e os azuis a classe malicious. Quanto mais escuro o nó, menor a probabilidade de erro 
+    e os azuis a classe malicious. Quanto mais escurto o nó, menor a probabilidade de erro 
     na classificação. \label{fig:primeira_arvore}}    
 \end{figure}
 
 Vemos que a árvore está usando majoritariamente os dados da coluna navegador 
-para realizar a classificação, o que não faz sentido, uma vez que esse dado foi simulado e o 
+para realizar a classifição, o que não faz sentido, uma vez que esse dado foi simulado e o 
 navegador não tem nenhuma relação com os ataques. Então removemos essa coluna da entrada 
 e o resultado está na Figura \ref{fig:segunda_arvore}.
 
@@ -156,7 +156,7 @@ e o resultado está na Figura \ref{fig:segunda_arvore}.
     \centering
     \includegraphics[width=.9\textwidth]{figuras/segunda_arvore.png}
     \caption{Segunda árvore de decisão. Os nós laranjas representam a classe not\_malicious 
-    e os azuis a classe malicious. Quanto mais escuro o nó, menor a probabilidade de erro 
+    e os azuis a classe malicious. Quanto mais escurto o nó, menor a probabilidade de erro 
     na classificação. \label{fig:segunda_arvore}}    
 \end{figure}
 
@@ -167,7 +167,7 @@ também atingiu uma acurácia de 1.
 \section{Escolha do modelo e considerações}
 
 Dado o que foi apresentado nas seções anteriores, somado aos resultados encontrados no capítulo 2, escolhemos o modelo de árvore de decisão com as colunas
-abaixo para realizar os experimentos e validá-lo em dados reais. 
+abaixo para realizar os experimentos e valida-lo em dados reais. 
 
 \begin{itemize}
     \item statuscode
