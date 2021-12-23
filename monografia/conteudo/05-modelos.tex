@@ -140,7 +140,9 @@ como os dados passaram por um pré-processamento de OneHotEncoder vale mencionar
 \begin{figure}
     \centering
     \includegraphics[width=.9\textwidth]{figuras/primeira-arvore.png}
-    \caption{Primeira árvore de decisão. \label{fig:primeira_arvore}}    
+    \caption{Primeira árvore de decisão. Os nós laranjas representam a classe not\_malicious 
+    e os azuis a classe malicious. Quanto mais escurto o nó, menor a probabilidade de erro 
+    na classificação. \label{fig:primeira_arvore}}    
 \end{figure}
 
 Vemos que a árvore está usando majoritariamente os dados da coluna navegador 
@@ -152,7 +154,9 @@ e o resultado está na Figura \ref{fig:segunda_arvore}.
 \begin{figure}
     \centering
     \includegraphics[width=.9\textwidth]{figuras/segunda_arvore.png}
-    \caption{Segunda árvore de decisão. \label{fig:segunda_arvore}}    
+    \caption{Segunda árvore de decisão. Os nós laranjas representam a classe not\_malicious 
+    e os azuis a classe malicious. Quanto mais escurto o nó, menor a probabilidade de erro 
+    na classificação. \label{fig:segunda_arvore}}    
 \end{figure}
 
 Esta versão já nos pareceu mais sólida pois ela utiliza a quantidade de parâmetros na requisição 
