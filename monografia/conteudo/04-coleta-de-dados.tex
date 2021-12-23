@@ -6,7 +6,7 @@
 \chapter{Ambiente e dados}
 \label{cap:data}
 
-Este capítulo mostra o ambiente que foi usado para realisar as simulações de ataque,
+Este capítulo mostra o ambiente que foi usado para realizar as simulações de ataque,
 coletar os logs e treinar os modelos. Além disso, também será explicado como os logs 
 foram coletados e processados.
 
@@ -14,8 +14,8 @@ Alguns dos itens foram inspirados no trabalho de conclusão de curso "Análise d
 Desempenho de Computadores de Baixo Custo em um Sistema de Detecção de Intrusão" de 
 Lucas Seiki Oshiro \cite{tcc:lucas}.
 
-O ambiente aqui mostrado pode ser visto na Figura \ref{fig:arquitetura_total}. De maneira geral,
-na máquina pessoal foram criadas as máquinas virtuais para simular os ataques, o Google Colab 
+O ambiente aqui mostrado pode ser visto na Figura \ref{fig:arquitetura_total}. Na máquina pessoal foram 
+criadas duas máquinas virtuais para simular os ataques, o Google Colab 
 usado para avaliar, treinar e compartilhar os modelos e por fim o Raspberry Pi e o Macbook 
 para rodar os experimentos.
 
@@ -36,18 +36,18 @@ Neste trabalho, duas máquinas físicas foram utilizadas: um desktop e um notebo
     \item Máquina pessoal
         \begin{itemize}
             \item Sistema operacional: Ubuntu 20.04 LTS
-            \item Processador: Intel i7-10700, 8 núcleos, 4.8 GHZ
-            \item Meméria RAM: 32Gb
+            \item Processador: Intel i7-10700, 8 núcleos, 4,8 GHz
+            \item Memória RAM: 32Gb
         \end{itemize}
         Esta máquina foi utilizada para iniciar duas máquinas virtuais que serão usadas 
         como o atacante e a vítima.
     \item Macbook 
         \begin{itemize}
             \item Sistema operacional: macOS Monterey - 12.0.1
-            \item Processador: M1, 8 núcleos, 3.2 GHZ
-            \item Meméria RAM: 8Gb
+            \item Processador: M1, 8 núcleos, 3.2 GHz
+            \item Memória RAM: 8Gb
         \end{itemize}        
-        Esta maquina foi utilizada para rodar os experimentos com Apache Spark, os quais 
+        Esta máquina foi utilizada para rodar os experimentos com Apache Spark, os quais 
         serão comparados com os resultados dos computadores de placa única.
 \end{itemize}
 
@@ -62,13 +62,13 @@ Elas foram criadas na máquina pessoal.
         \begin{itemize}
             \item Sistema operacional:
             \item Processador: 
-            \item Meméria RAM: 
+            \item Memória RAM: 
         \end{itemize}
     \item Vítima
         \begin{itemize}
             \item Sistema operacional: 
             \item Processador: 
-            \item Meméria RAM: 
+            \item Memória RAM: 
         \end{itemize}        
 \end{itemize}
 
@@ -84,7 +84,7 @@ dos logs.
         \begin{itemize}
             \item Sistema operacional: 
             \item Processador: 
-            \item Meméria RAM: 
+            \item Memória RAM: 
         \end{itemize}
 \end{itemize}
 
@@ -93,12 +93,12 @@ dos logs.
     \item Google Colab
         \begin{itemize}
             \item Sistema operacional: Ubuntu 18.04.5 LTS
-            \item Processador: Intel(R) Xeon(R) CPU, 1 núcleo, 2.20GHz
-            \item Meméria RAM: 16Gb
+            \item Processador: Intel(R) Xeon(R) CPU, 1 núcleo, 2,20GHz
+            \item Memória RAM: 16Gb
         \end{itemize} 
-        Este foi utilizado para escrever os notebooks com os modelos e compartilhar os resultados
-        parciais de forma eficaz. Esta é a configuração padrão na data que este
-        trabalho foi realizado.
+        Este ambiente foi utilizado para escrever os notebooks com os modelos e compartilhar os resultados
+        parciais de forma eficaz. A configuração de hardware apresentada acima é a configuração padrão na data 
+        que este trabalho foi realizado.
 \end{itemize}
 
 \section{Coleta de dados}
@@ -114,7 +114,7 @@ servidores HTTP Apache. Eles são úteis porque seguem um padrão, como mostrado
 127.0.0.1 - - [28/F...:28 -0400] "GET /url2 HTTP/1.0" 200 9 "-" "ApacheB"
 \end{verbatim}
 
-Nele encontramos os seguintes dados: o ip de acesso, a data, o método HTTP que foi utilizado, 
+Nele encontramos os seguintes dados: o endereço ip de acesso, a data, o método HTTP que foi utilizado, 
 a URL de acesso, o código HTTP de retorno, a quantidade de bytes retornada e o agente que realizou a requisição.
 
 Por exemplo, na última linha das sequências apresentadas acima, temos os seguintes dados:
@@ -136,8 +136,8 @@ Por exemplo, na última linha das sequências apresentadas acima, temos os segui
 \subsection{Dados simulados}
 
 No ínicio do projeto não foi possível encontrar logs reais que fossem públicos. Algumas fontes
-que foram considearadas: Kaggle \footnote{\url{https://www.kaggle.com/datasets}} e o IEEE Data Port 
-\footnote{\url{https://ieee-dataport.org/}}. Então, tomamos a decisão de simular requisições maliciosas 
+considearadas foram o: Kaggle \footnote{\url{https://www.kaggle.com/datasets}} e o IEEE Data Port 
+\footnote{\url{https://ieee-dataport.org/}}. Por causa disso, tomamos a decisão de simular requisições maliciosas 
 e não maliciosas para então coletar seus logs. Para simular tais requisições três condições deve 
 ser satisfeitas pois pensamos que seria prudente encontrar em logs reais, são elas:
 
@@ -146,7 +146,8 @@ ser satisfeitas pois pensamos que seria prudente encontrar em logs reais, são e
     superior a quantidade de requisiçõe maliciosas. Isto é, os dados devem estar desbalanceados.
     \item Certas páginas devem ser mais acessadas do que outras, isso se dá por conta 
     de que em sites há páginas que recebem mais acessos do que as outras, por exemplo, a página inicial.
-    \item Deve haver uma predominância de acessos vindo dos navegadores Google Chrome e Firefox.
+    \item Deve haver uma predominância de acessos vindo dos navegadores Google Chrome e Firefox pelo fato 
+    deles estarem entre os navegadores mais usados no mundo \footnote{\url{https://gs.statcounter.com/browser-market-share/}}.
 \end{itemize}
 
 Para alcançar tais condições, os utilitários xsser, sqlmap e um crawler desenvolvido para 
@@ -169,7 +170,7 @@ fossem maliciosas e 90\% não. Os acessos foram feitos a partir de máquinas sep
 mostrado na Figura \ref{fig:arquitetura_ataque}.
 
 Na simulação o fator tempo foi arbitrariamente desconsiderado. E nos modelos ele não se mostrou 
-como uma característica relevante, mas isso não descasta a possibilidade dele ser usado com uma possível
+como uma característica relevante, mas isso não descarta a possibilidade dele ser usado com uma possível
 característica para classificar os dados.
 
 \begin{figure}
@@ -189,34 +190,39 @@ característica para classificar os dados.
 \end{figure}
 
 As figuras \ref{fig:request_por_url}, \ref{fig:request_por_tipo} e \ref{fig:request_por_navegador} resumem 
-as requisições realizadas. Nota-se que os critérios estabelecidos foram satisfeitos. E por fim, como 
-sabiamos a origem das requisições (xsser, sqlmap ou crawler) construir a fonte da verdade para estes 
-dados foi uma tarefas trivial.
+as requisições realizadas. Nota-se que os critérios estabelecidos foram satisfeitos. Por exemplo, na
+Figura \ref{fig:request_por_url} a uma quantidade maior de requisições em certas URLs, na Figura 
+\ref{fig:request_por_tipo} há mais requisições não maliciosas do que maliciosas e 
+na Figura \ref{fig:request_por_navegador} vemos a predominância dos navegadores Google Chrome e 
+Firefox. E por fim, como 
+sabíamos a origem das requisições (xsser, sqlmap ou crawler) construir a fonte da verdade para estes 
+dados foi uma tarefa trivial.
 
 \subsection{Dados reais}
 
-Em parelalo as simulações anteriores, estavamos pesquisando logs de servidores reais para que os modelos 
-encontrados sejam testados e validades neles. 
+Em parelalo às simulações anteriores, procuramos logs de servidores reais para que os modelos 
+encontrados fossem testados e validades neles. 
 
-Para isso entramos em contato com os autores do artigos mencionados no capítulo 2, e 
-pedimos por favor se eles nos podiam indicar quais dados foram usados em seus respectivos artigos. Jaron Fontaine, um dos autores
-do artigo \cite{ref:art6} nos respondeu com os dados utilizados e eles estavam dispoiveis de
+Para isso entramos em contato com os autores dos artigos mencionados no Capítulo 2, e 
+perguntamos quais dados foram usados em seus respectivos artigos. Jaron Fontaine, um dos autores
+do artigo \cite{ref:art6} nos respondeu com os dados utilizados e eles estavam disponíveis de
 maneira pública. 
 
-Os dados indicados fazem parte de um projeto chamado The Honeynet Projet \footnote{\url{https://www.honeynet.org/}}. Trata-se de uma organização de pesquisa 
+Os dados indicados fazem parte de um projeto chamado The Honeynet Projet \footnote{\url{https://www.honeynet.org/}}. 
+Trata-se de uma organização de pesquisa 
 sem fins lucrativos, que tem como objetivo pesquisar e investigar os últimos ataques e desenvolver
 ferramentas open source para melhorar a segurança da internet.
 
-Tais dados faziam parte de uma competição de segurança da informação, e foram coletados da seguintes maneira:
+Os dados faziam parte de uma competição de segurança da informação, e foram coletados da seguintes maneira:
 
 \begin{itemize}
-    \item Uma aplicação web com multiplos servidores for disponibilizada publicamente.
+    \item Uma aplicação web com múltiplos servidores foi disponibilizada publicamente.
     \item Escolheu-se alguns dos servidores para subir uma versão da aplicação 
     com falhas de segurança conhecidas.
-    \item Então monitorou-se a ativadade nesse servidor contaminado para detectar intrusões.
+    \item Então monitorou-se a atividade nesses servidores com falhas para detectar intrusões.
 \end{itemize}
 
-Apesar dos dados serem reais, a competição tratava-se de identificar, apartir dos logs, quais requisições 
+Apesar dos dados serem reais, a competição tratava-se de identificar, a partir dos logs, quais requisições 
 eram maliciosas e também se o ataque foi realizado com sucesso ou não. 
 
 Nesse sentido, isso foi um desafio, dado que a fonte da verdade não era pública e a quantidade de logs 
@@ -229,8 +235,8 @@ reais.
 \subsection{Estruturando os logs}
 
 Os logs em seu formato bruto não podem ser usados como entradas para modelos de aprendizagem
-de máquina, então um pre-processamento foi necessário. Por conta do padrão mencionado no inicio 
-deste capitulo, foi possível criar um script que os estruturasse. Abaixo um trecho de código
+de máquina, então um pre-processamento foi necessário. Por conta do padrão mencionado no  início deste capítulo, 
+foi possível criar um script que os estruturasse. Abaixo um trecho de código
 que foi usado nessa tarefa:
 
 \begin{lstlisting}[language=Python]

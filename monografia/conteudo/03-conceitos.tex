@@ -17,8 +17,7 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
         O Kali Linux é uma distribuição linux open source baseada em Debian. 
         Tem como foco auxiliar em tarefas relacionadas a segurança da informação 
         e testes de penetração. \\
-        Ele foi usado por conta do utilitários nele presentes que serão apresentados
-        a seguir.
+        Neste trabalho seus utilitários foram utilizados para simular ataques.
     \item[xsser] \hfill \\ 
         O xsser é um utilitário que está instalado por padrão no kali linux. Sua 
         função é automatizar a deteccão, exploração e análise de ataques XSS em 
@@ -47,7 +46,7 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
 
 \begin{description}
     \item[Árvore de decisão] \hfill \\ Árvore de decisão é um modelo de representação 
-    dos dados que, neste trabalho, visa classificar os dados tendo como base um conjunto 
+    dos dados que visa classificar os dados tendo como base um conjunto 
     de atributos. \\ 
     Elas são construidas particionando os dados em conjuntos, chamados de nós, 
     até que uma folha seja encontrada. Esta então é a classe do dados. Veja na Figura \ref{fig:ex_decision_tree} 
@@ -66,11 +65,10 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
     Por exemplo, quando comparado com o modelo de florestas aleatórias que utiliza várias 
     árvores de decisão para realizar a classificação, entender como cada árvore influência 
     na classificação final dificulta a interpretabilidade no contexto geral, portanto,
-    o modelo de árvore de decisão ter um interpretabilidade maior do que o de árvore de 
-    decisão.
+    o modelo de árvore de decisão ter um interpretabilidade maior do que o de florestas de decisão.
 
-    \item[Florestas aleatórias] \hfill \\ Florestas aleatórias é um modele de aprendizagem 
-    de máquina de combina árvores de decisão. Isto é, uma certa quantidade de árvores são 
+    \item[Florestas aleatórias] \hfill \\ Florestas aleatórias é um modelo de aprendizagem 
+    de máquina que combina árvores de decisão. Isto é, uma certa quantidade de árvores são 
     treinadas de maneira independente uma da outra, utilizando diferentes partes do conjunto de 
     dados. \\ 
     E para realizar a classificação, cada árvore realiza uma classificação (voto) e o resultado 
@@ -88,10 +86,10 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
 
     Este modelo possui dois pontos de atenção: sua interpretabilidade é baixa, dado o número de 
     classificadores que temos que analisar, e também é consideravelmente mais pesado que o anterior, 
-    pois ele treina algumas árvores de decisão.
+    pois ele treina algumas árvores de decisão e não apenas uma.
 \end{description}
 
-\section{Ferramentas de aprendizado de máquina}
+\section{Ferramentas de aprendizagem de máquina}
 
 \begin{description}
     \item[scikit-learn] \hfill \\ Scikit-learn é uma ferramenta que implementa algoritmos de aprendizagem
@@ -104,7 +102,7 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
 
     \item[Apache Spark] \hfill \\ Apache Spark é uma ferramenta para trabalhar com aprendizagem 
     de máquina de maneira distribuida ou em um único nó. \\
-    Assim como o scikit-learn, há alguns modelos implementados que estão pronto para ser utilizados, 
+    Assim como o scikit-learn, há alguns modelos implementados que estão prontos para serem utilizados, 
     em particular, há implementações de árvore de decisão e floresta aleatória. \\
     Há suporte para algumas linguagens, como: Python, Scala, Java e R. \\
     Neste trabalho foi usado para executar os experimentos com o modelo selecionado.
@@ -113,12 +111,12 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
 \section{Segurança em servidores HTTP}
 
 \begin{description}
-    \item[Ataque XSS] \hfill \\ Ataque XSS consiste em que scripts maliciosas são injetados em 
-    websites confiáveis. Isso se da por meio, em geral, de formulários em websites. \\ 
+    \item[Ataque XSS] \hfill \\ Ataque XSS consiste em que scripts maliciosos são injetados em 
+    websites confiáveis. Em geral, isso se da por meio de formulários em websites. \\ 
     Este ataque foi um objeto de estudo deste trabalho.
     \item[SQL Injection] \hfill \\ SQL Injection consiste em enviar consultas modificadas a banco 
     de dados por meio de entradas do usuário, com por exemplo campos de texto em forumários, as quais 
-    podem ler informação sensiveis do banco de dados. \\   
+    podem ler informação sensiveis do banco de dados as quais tal usário não possue acesso. \\
     Este ataque foi um objeto de estudo deste trabalho.
     \item[Registro de acessos nos logs] \hfill \\ Nos registros de acceso de logs são armazenadas as
     informações de um requisição HTTP, neles podemos encontrar dados com o endereço IP de origem,
@@ -139,6 +137,11 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
     \item[Virtualização] \hfill \\ Virtualização é o processo de executar multiplas intâncias 
     de sistemas operacionas em uma abstração do mesmo hardware. Com isso é possivel 
     criar instâncias isoladas de sistemas operacionais em um mesmo computador. \\
-    Neste trabalho, foi utilizado para instancias a vítima e o atacante.
-    \item[Notebooks] \hfill \\ Explicar o que são notebooks.
+    Neste trabalho, foi utilizado para criar as instancias vítima e atacante.
+    \item[Notebooks] \hfill \\ Notebook são arquivos divididos em células que executam
+    trechos de código Python. Ele facilita a experimentação pois guarda os resultados das
+    células, evitando assim a necessidade de executar o mesmo trecho de código multiplas
+    vezes. \\ 
+    Neste trabalho foi utilizado para realizar ETL, além de treinar e validar os modelos
+    de aprendizagem de máquina. 
 \end{description}

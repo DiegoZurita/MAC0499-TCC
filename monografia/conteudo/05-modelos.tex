@@ -3,7 +3,7 @@
 % para saber mais: https://tex.stackexchange.com/q/78101/183146
 
 %% ------------------------------------------------------------------------- %%
-\chapter{Modelos}
+\chapter{Modelos de aprendizagem de máquina}
 \label{cap:models}
 
 Este capítulo tem como objetivo mostrar como os modelos foram escolhidos e apresentar
@@ -27,7 +27,8 @@ A seguir é apresentado um dicionário do que significa cada coluna:
     \item url: a url requisitada.
     \item statuscode: o código HTTP de retorno.
     \item bytessent: quando bytes foram retornados na requisição.
-    \item refferer: contém o valor do cabeçalho Refere.
+    \item refferer: se a requisição se originou através de outro website, então o endereço deste 
+    website estará nesta coluna. Esse valor é passado através do cabeçalho Refere.
     \item useragent: o agente responsável pela requisição.
     \item malicious: variável indicadora que é 1 se a requisição é maliciosa, 0 caso contrário.
 \end{itemize}

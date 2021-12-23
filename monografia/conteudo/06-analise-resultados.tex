@@ -19,8 +19,13 @@ Para o experimento de treino, a seguinte metodologia foi usada:
 
 \begin{itemize}
     \item Configuração do Apache Spark nos computadores.
-    \item Início do script raspberry-log. 
-    \item Rodar 20 vezes o script de treino e obter os seus tempos.
+    \item Início do script raspberry-log 
+    \footnote{Este script foi desenvolvido no trabalho \cite{tcc:lucas}. Ele captura dados
+    de utilização de memória, disco e temperatura}. 
+    \item Rodar 20 \footnote{É necessário rodar mais de uma vez para obter dados mais 
+    confiávies, evitando valores discrepantes. O número 20 foi escolhido de experimentos 
+    vistos e realizados nas disciplinas MAC0426 e MAC0219 do curso de ciência da computação do IME-USP.} 
+    vezes o script de treino e obter os seus tempos.
     \item Fim do script raspberry-log. 
     \item Coletar as informações necessárias: tempo, consumo de memória e CPU.
 \end{itemize}
