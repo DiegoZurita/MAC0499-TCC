@@ -30,39 +30,39 @@ td, th {
 }
 
 .cronograma tbody tr:nth-child(3) td:nth-child(6){ 
-  background: #f0f95e; 
+  background: #00bb06; 
 } 
   
 /* Avaliação dos modelos */
 .cronograma tbody tr:nth-child(4) td:nth-child(6) { 
-  background: #f0f95e; 
+  background: #00bb06; 
 } 
 
 /* Configurar cluster */
 .cronograma tbody tr:nth-child(5) td:nth-child(7) { 
-  background: #0020bb; 
+  background: #00bb06; 
 } 
   
 /* Implementar modelo no spark */
 .cronograma tbody tr:nth-child(6) td:nth-child(7),
   .cronograma tbody tr:nth-child(6) td:nth-child(8){ 
-  background: #0020bb; 
+  background: #00bb06; 
 } 
   
 /* Integrar modelos em produção */
 .cronograma tbody tr:nth-child(7) td:nth-child(9){ 
-  background: #0020bb; 
+  background: #00bb06; 
 } 
   
 /* Resultados finais */  
 .cronograma tbody tr:nth-child(8) td:nth-child(9){ 
-  background: #0020bb; 
+  background: #00bb06; 
 }
   
 /* Monografia */  
 .cronograma tbody tr:nth-child(9) td:nth-child(10),
 .cronograma tbody tr:nth-child(9) td:nth-child(11) { 
-  background: #0020bb; 
+  background: #00bb06; 
 }
 ```
 

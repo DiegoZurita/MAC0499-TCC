@@ -9,6 +9,8 @@ navbar:
       href: index.html
     - text: "Cronograma"
       href: cronograma.html
+    - text: "Monografia"
+      href: monografia.pdf
     - text: "Repositório"
       href: https://github.com/DiegoZurita/MAC0499-TCC
 include: ["proposta.pdf"]
