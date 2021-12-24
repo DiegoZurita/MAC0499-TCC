@@ -44,7 +44,7 @@ Neste trabalho, duas máquinas físicas foram utilizadas: um desktop e um notebo
     \item Macbook 
         \begin{itemize}
             \item Sistema operacional: macOS Monterey - 12.0.1
-            \item Processador: M1, 8 núcleos, 3.2 GHz
+            \item Processador: M1, 8 núcleos, 3,2 GHz
             \item Memória RAM: 8Gb
         \end{itemize}        
         Esta máquina foi utilizada para rodar os experimentos com Apache Spark, os quais 
@@ -60,15 +60,15 @@ Elas foram criadas na máquina pessoal.
 \begin{itemize}
     \item Atacante
         \begin{itemize}
-            \item Sistema operacional:
-            \item Processador: 
-            \item Memória RAM: 
+            \item Sistema operacional: Kali Linux 2021.2
+            \item Processador: Intel i7-10700, 4 núcleos, 4,8 GHz
+            \item Memória RAM: 4Gb
         \end{itemize}
     \item Vítima
         \begin{itemize}
-            \item Sistema operacional: 
-            \item Processador: 
-            \item Memória RAM: 
+            \item Sistema operacional: Ubuntu 20.04 LTS
+            \item Processador: Intel i7-10700, 4 núcleos, 4,8 GHz
+            \item Memória RAM: 4Gb
         \end{itemize}        
 \end{itemize}
 
@@ -82,9 +82,9 @@ dos logs.
 \begin{itemize}
     \item Raspberry Pi
         \begin{itemize}
-            \item Sistema operacional: 
-            \item Processador: 
-            \item Memória RAM: 
+            \item Sistema operacional: Raspberry Pi OS - 10.9
+            \item Processador: Quad Core 1,2GHz Broadcom BCM2837
+            \item Memória RAM: 1Gb
         \end{itemize}
 \end{itemize}
 
@@ -121,24 +121,24 @@ Por exemplo, na última linha das sequências apresentadas acima, temos os segui
 
 \begin{itemize}
     \item 127.0.0.1: endereço IP de origem, neste caso, o mesmo computador onde está a aplicação Apache.
-    \item [28/F...:28 -0400]: data e hora da requisição
+    \item 28/F...:28 -0400: data e hora da requisição
     \item GET: é o verbo HTTP que foi utilizado. Ele significa que o usuário quer obter dados do servidor.
-    \item /url2 HTTP/1.0: A URL que o usuário quer acessar e o versão do protocolo HTTP usado.
+    \item /url2 HTTP/1.0: A URL que o usuário quer acessar e a versão do protocolo HTTP usado.
     \item 200: é código HTTP de resposta, neste caso, representa sucesso.
     \item 9: a quantidade de bytes retornados pela requisição. 
-    \item ApacheB: Representa o agente que realizou a requisição, aqui em especifico ApacheB é uma
+    \item ApacheB: Representa o agente que realizou a requisição, aqui em específico ApacheB é uma
     abreviação para ApacheBenchmark o agente de um utilitário chamado ab \footnote{\url{https://httpd.apache.org/docs/2.4/programs/ab.html}}, 
-    qual é usado para automatizar um certa quantidade. de requisições a uma certa URL.
-    Nesse campo, em geral, estão as informações do navegador, com Google Chrome ou Firefox.
+    que é usado para automatizar um certa quantidade de requisições a uma certa URL.
+    Nesse campo, em geral, estão as informações do navegador, como Google Chrome ou Firefox.
 \end{itemize}
 
 
 \subsection{Dados simulados}
 
-No inicio do projeto não foi possível encontrar logs reais que fossem públicos. Algumas fontes
+No início do projeto não foi possível encontrar logs reais que fossem públicos. Algumas fontes
 consideradas foram o: Kaggle \footnote{\url{https://www.kaggle.com/datasets}} e o IEEE Data Port 
 \footnote{\url{https://ieee-dataport.org/}}. Por causa disso, tomamos a decisão de simular requisições maliciosas 
-e não maliciosas para então coletar seus logs. Para simular tais requisições três condições deve 
+e não maliciosas para então coletar seus logs. Para simular tais requisições três condições devem 
 ser satisfeitas pois pensamos que seria prudente encontrar em logs reais, são elas:
 
 \begin{itemize}
@@ -191,7 +191,7 @@ característica para classificar os dados.
 
 As figuras \ref{fig:request_por_url}, \ref{fig:request_por_tipo} e \ref{fig:request_por_navegador} resumem 
 as requisições realizadas. Nota-se que os critérios estabelecidos foram satisfeitos. Por exemplo, na
-Figura \ref{fig:request_por_url} a uma quantidade maior de requisições em certas URLs, na Figura 
+Figura \ref{fig:request_por_url} há uma quantidade maior de requisições em certas URLs, na Figura 
 \ref{fig:request_por_tipo} há mais requisições não maliciosas do que maliciosas e 
 na Figura \ref{fig:request_por_navegador} vemos a predominância dos navegadores Google Chrome e 
 Firefox. E por fim, como 
@@ -208,7 +208,7 @@ perguntamos quais dados foram usados em seus respectivos artigos. Jaron Fontaine
 do artigo \cite{ref:art6} nos respondeu com os dados utilizados e eles estavam disponíveis de
 maneira pública. 
 
-Os dados indicados fazem parte de um projeto chamado The Honeynet Projet \footnote{\url{https://www.honeynet.org/}}. 
+Os dados indicados fazem parte de um projeto chamado The Honeynet Project \footnote{\url{https://www.honeynet.org/}}. 
 Trata-se de uma organização de pesquisa 
 sem fins lucrativos, que tem como objetivo pesquisar e investigar os últimos ataques e desenvolver
 ferramentas open source para melhorar a segurança da internet.

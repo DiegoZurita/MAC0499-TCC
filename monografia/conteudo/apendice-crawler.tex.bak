@@ -1,0 +1,17 @@
+%!TeX root=../tese.tex
+%("dica" para o editor de texto: este arquivo é parte de um documento maior)
+% para saber mais: https://tex.stackexchange.com/q/78101/183146
+
+\chapter{Crawler}
+\label{ap:crawler}
+
+O Crawer pode ser visto em \url{https://github.com/DiegoZurita/MAC0499-TCC/blob/main/projeto/scripts/crawler.py}.
+Ele foi utilizado para simular as requsições de acordo o que foi explicado na seção 4.3.1.
+
+O método execRequest realiza uma requisição com os parâmtros necessários para o DVWA. 
+O método getRandomString gera uma palavra aleatória que será usado como parâmtros na requisição.
+E por fim no método createRequest, gera um conjunto de requisições tal que certas urls sejam mais
+requisitadas do que outras
+
+
+

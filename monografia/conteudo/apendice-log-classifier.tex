@@ -5,44 +5,7 @@
 \chapter{Classificador manual de log}
 \label{ap:log_classifier}
 
+O código fonte do classificador de logs pode ser encontrado em \url{https://github.com/DiegoZurita/MAC0499-TCC/blob/main/projeto/scripts/log_classifier.py}.
 
-\begin{lstlisting}[language=Python]
-    import os
-    import linecache
-    import sys
-    
-    
-    def main():
-        logFilePath = sys.argv[1]
-        destPathFile = sys.argv[2]
-        totalLines = int(sys.argv[3])
-        startFromLine = int(sys.argv[4]) + 1
-    
-        if not os.path.isfile(destPathFile):
-            print("file not exists, creating..")
-            f = open(destPathFile, "w")
-            f.close()
-            
-    
-        destfile = open(destPathFile, "a+")
-    
-        print("")
-        print("Classifique as linhas abaixo (m = maliciosa, n = não maliciosa), q para sair")
-        print("")
-    
-        for i in range(startFromLine, totalLines):
-            logLine = linecache.getline(logFilePath, i)
-            
-            classe = input("%d %s" % (i, logLine))
-    
-            if classe == "q":
-                break
-    
-            destfile.write("%d, %s, %s\n" % (i, logLine.replace("\n", ""), classe) )
-    
-        destfile.close()
-        
-    
-    if __name__ == "__main__":
-        main()
-\end{lstlisting}
+Nas primeiras linhas um arquivo de log é aberto. Na estrutura for o programa fica aguardando o usuário classificar cada linha
+como maliciosa e não maliciosa. Neste trabalho, foi utilizado para classificar as linhas de arquivos de logs reais.
