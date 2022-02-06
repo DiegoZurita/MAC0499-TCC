@@ -1,0 +1,6 @@
+---
+title: "Resumo"
+site: distill::distill_website
+---
+
+Com o grande volume de requisições a websites, o número de de requisições maliciosas que se aproveitam de vulnerabilidades aumenta propocionalmente. Nesse sentido, se faz necessária a automação de detecções de requisições maliciosas, já que a verificação manual nem sempre consegue ser rápida o suficiente para impedir a exploração das vulnerabilidades. Este trabalho estuda modelos de aprendizagem de máquina para tal automação por meio da análise de logs de servidor HTTP. Além disso, analisa seu desempenho em um Raspberry Pi.

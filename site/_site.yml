@@ -9,6 +9,8 @@ navbar:
       href: index.html
     - text: "Cronograma"
       href: cronograma.html
+    - text: "Resumo"
+      href: resumo.html
     - text: "Monografia"
       href: monografia.pdf
     - text: "Repositório"
