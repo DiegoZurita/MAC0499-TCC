@@ -10,6 +10,23 @@ Este capítulo apresenta os conceitos que foram utilizados para o desenvolviment
 as ferramentas utilizadas para realizar o Extract Transform and Load (ETL), simular os logs de ataques, modelos
 que foram utilizados e por fim quais frameworks foram usados para a aprendizagem de máquina.
 
+\section{Segurança em servidores HTTP}
+
+\begin{description}
+    \item[Ataque XSS] \hfill \\ Ataque XSS consiste em scripts maliciosos que são injetados em 
+    websites confiáveis. Em geral, isso se dá por meio de formulários em websites. \\ 
+    Este ataque foi um objeto de estudo deste trabalho.
+    \item[SQL Injection] \hfill \\ SQL Injection consiste em enviar consultas modificadas a banco 
+    de dados por meio de entradas do usuário, como por exemplo campos de texto em formulários, as quais 
+    podem ler informação sensíveis do banco de dados as quais tal usuário não possui acesso. \\
+    Este ataque foi um objeto de estudo deste trabalho.
+    \item[Registro de acessos nos logs] \hfill \\ Nos registros de acesso de logs são armazenadas as
+    informações de uma requisição HTTP, neles podemos encontrar dados como o endereço IP de origem,
+    data e hora e endereço requisitado, para citar alguns dados.  \\
+    Neste trabalho, esses registros foram utilizados como fonte primária de dados para treinar 
+    e validar os modelos de aprendizagem de máquina.
+\end{description}
+
 \section{Ferramentas}
 
 \begin{description}
@@ -49,23 +66,23 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
     dos dados que visa classificar os dados tendo como base um conjunto 
     de atributos. \\ 
     Elas são construídas particionando os dados em conjuntos, chamados de nós, 
-    até que uma folha seja encontrada. Esta então é a classe do dados. Veja na Figura \ref{fig:ex_decision_tree} 
-    em que é mostrada uma árvore de decisão que decide se um aluno está apto a se formar ou não. 
-    Nela, os quadrados são os nós e as elipses são as folhas, isto é, a respectiva classe do 
-    dado.
+    até que um critério de parada seja satisfeito. Esta então é a classe do dados. 
+    Veja na Figura \ref{fig:ex_decision_tree} em que é mostrada uma árvore de 
+    decisão que decide se um aluno está apto a se formar ou não. Nela, os quadrados 
+    são os nós e as elipses são as folhas, isto é, a respectiva classe do dado.
     \begin{figure}
         \centering
         \includegraphics[width=.8\textwidth]{figuras/ex_decicion_tree1.png}
         \caption{Exemplo de árvore de decisão.\label{fig:ex_decision_tree}}
     \end{figure}
 
-    Este modelo é útil pois a sua interpretabilidade é alta. A interpretabilidade é grau com que 
+    Este modelo é útil pois a sua interpretabilidade é alta. A interpretabilidade é o grau com que 
     um modelo pode ser entendido em termos humanos. 
     
     Por exemplo, quando comparado com o modelo de florestas aleatórias que utiliza várias 
     árvores de decisão para realizar a classificação, entender como cada árvore influencia 
     na classificação final dificulta a interpretabilidade no contexto geral, portanto,
-    o modelo de árvore de decisão ter um interpretabilidade maior do que o de florestas de decisão.
+    o modelo de árvore de decisão tem uma interpretabilidade maior do que o de florestas de decisão.
 
     \item[Florestas aleatórias] \hfill \\ Florestas aleatórias é um modelo de aprendizagem 
     de máquina que combina árvores de decisão. Isto é, uma certa quantidade de árvores são 
@@ -85,7 +102,8 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
 
     Este modelo possui dois pontos de atenção: sua interpretabilidade é baixa, dado o número de 
     classificadores que temos que analisar, e também é consideravelmente mais pesado que o anterior, 
-    pois ele treina algumas árvores de decisão e não apenas uma.
+    pois ele treina algumas árvores de decisão e não apenas uma. Mas costuma ser mais robusta e 
+    generaliza melhor.
 \end{description}
 
 \section{Ferramentas de aprendizagem de máquina}
@@ -105,23 +123,6 @@ que foram utilizados e por fim quais frameworks foram usados para a aprendizagem
     em particular, há implementações de árvore de decisão e floresta aleatória. \\
     Há suporte para algumas linguagens, como: Python, Scala, Java e R. \\
     Neste trabalho foi usado para executar os experimentos com o modelo selecionado.
-\end{description}
-
-\section{Segurança em servidores HTTP}
-
-\begin{description}
-    \item[Ataque XSS] \hfill \\ Ataque XSS consiste em scripts maliciosos que são injetados em 
-    websites confiáveis. Em geral, isso se dá por meio de formulários em websites. \\ 
-    Este ataque foi um objeto de estudo deste trabalho.
-    \item[SQL Injection] \hfill \\ SQL Injection consiste em enviar consultas modificadas a banco 
-    de dados por meio de entradas do usuário, com por exemplo campos de texto em formulários, as quais 
-    podem ler informação sensíveis do banco de dados as quais tal usuário não possui acesso. \\
-    Este ataque foi um objeto de estudo deste trabalho.
-    \item[Registro de acessos nos logs] \hfill \\ Nos registros de acesso de logs são armazenadas as
-    informações de um requisição HTTP, neles podemos encontrar dados com o endereço IP de origem,
-    data e hora e endereço requisitado, para citar alguns dados.  \\
-    Neste trabalho, esses registros foram utilizados como fonte primária de dados para treinar 
-    e validar os modelos de aprendizagem de máquina.
 \end{description}
 
 \section{Outros conceitos}

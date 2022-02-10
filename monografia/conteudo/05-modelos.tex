@@ -8,7 +8,7 @@
 
 Este capítulo tem como objetivo mostrar como os modelos foram escolhidos e apresentar
 métricas nos dados simulados e reais. Os resultados aqui apresentados foram obtidos no 
-ambiente do Google Colab, uma vez que que este foi o ambiente escolhido para compartilhar 
+ambiente do Google Colab, uma vez que este foi o ambiente escolhido para compartilhar 
 os resultados dos nossos experimentos. Por fim, durante a seleção dos modelos apenas os dados 
 simulados foram usados, uma vez que ainda não estávamos de posse dos logs reais, portanto 
 apenas na última seção deste capítulo mostramos o desempenho do modelo escolhido nos dados reais.
@@ -185,17 +185,20 @@ do log foram suficientes para conseguir uma acurácia considerada boa.
 
 \section{Testes em dados reais}
 
-De posse dos dados reais mencionados na Seção 4.3.2, executamos o modelo escolhido neles e atingimos 
-uma acurácia de aproximadamente 0,93 no conjunto de teste. Portanto, definitivamente
-seguimos com ele nos experimentos.
+De posse dos dados reais mencionados na Seção 4.3.2, treinamos um novo modelo de árvore de decisão
+com os dados reais e atingimos uma acurácia de aproximadamente 0,93 no conjunto de teste. Além disso,  
+na Tabela \ref{tab:matriz_confusao} mostramos a matriz de confusão resultado da classificação desse modelo. 
+Dela conseguimos calcular a precisão e recall, que tem valores 0.74 e 0.90, respectivamente. Portanto, 
+escolhemos esse modelos para os experimentos.
 
 
-\begin{figure}
+\begin{table}[!ht]
     \centering
-    \includegraphics[width=.9\textwidth]{figuras/acuracia_em_dados_reais.png}
-    \caption{A acurácia do modelo em dados reais pela quantidade de linhas \label{fig:classificacao_por_quantidade_de_linhas}}
-\end{figure}
+    \begin{tabular}{|l|l|}
+    \hline
+        2604 & 161 \\ \hline
+        48 & 467 \\ \hline
+    \end{tabular}
+    \caption{Matriz de confusão do modelo árvore nos dados de teste.\label{tab:matriz_confusao}}
+\end{table}
 
-Na Figura \ref{fig:classificacao_por_quantidade_de_linhas} vemos como a acurácia 
-estabiliza em 0,93 a medida que mais dados são adicionados no conjunto de teste, 
-ou seja, concluímos que o modelo está generalizando bem.
